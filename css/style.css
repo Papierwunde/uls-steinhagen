@@ -239,7 +239,7 @@ p  { max-width: 68ch; }
 #navbar.scrolled,
 #site-header.scrolled,
 .site-header.scrolled {
-  background: rgba(245,242,236,.97);
+  background: var(--cream);
   box-shadow: 0 2px 16px rgba(45,80,22,.12);
   backdrop-filter: blur(8px);
 }
@@ -279,7 +279,7 @@ p  { max-width: 68ch; }
 /* Logo icon wrapper – drop your logo inside .nav-logo-icon */
 .nav-logo-icon {
   width: 36px; height: 36px;
-  background: var(--green-dark);
+  background: var(--cream);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
