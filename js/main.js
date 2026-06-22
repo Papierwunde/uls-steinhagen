@@ -173,21 +173,66 @@
 // Das offizielle, kurze Formbee-Skript ohne Schnickschnack
 const submitForm = async (event) => {
     event.preventDefault();
+
     const form = document.querySelector('#form');
     
-    // Sendet die Daten im Hintergrund
-    await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        alert('Formular abgesendet!');
+        form.reset();
+
+    } catch (err) {
+        console.error(err);
+        alert('Fehler beim Absenden!');
+    }
+
+    const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+    };
+
+    const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     });
-    
-    // Optionale Bestätigung für den Nutzer
-    alert('Formular abgesendet!');
-    form.reset();
+
+    console.log(await response.text());
 };
+const submitForm = async (event) => {
+    event.preventDefault();
 
-document.querySelector('#form').addEventListener('submit', submitForm);
+    const form = document.querySelector('#form');
 
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        alert('Formular abgesendet!');
+        form.reset();
+
+    } catch (err) {
+        console.error(err);
+        alert('Fehler beim Absenden!');
+    }
+};
 
 
 
