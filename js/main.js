@@ -175,14 +175,14 @@
   if (!form) return;
 
   form.addEventListener("submit", function (e) {
-    // 1. Zuerst prüfen, ob alle Pflichtfelder korrekt ausgefüllt sind
+    // 1. Prüfen, ob Pflichtfelder fehlen
     if (!form.checkValidity()) {
-      // Wenn Felder fehlen, stoppen wir hier NICHT. 
-      // Wir lassen dem Browser den Vortritt, damit er seine roten Standard-Warnungen anzeigt.
-      return; 
+      e.preventDefault(); // Verhindert das unendliche Laden/Senden der Seite!
+      form.reportValidity(); // Zwingt den Browser, die "Bitte ausfüllen"-Sprechblasen anzuzeigen!
+      return; // Bricht das Skript ab, der Button bleibt normal klickbar.
     }
 
-    // 2. Wenn alles korrekt ist, verhindern wir das Neuladen der Seite
+    // 2. Wenn alles ausgefüllt ist: Seite am Neuladen hindern und senden
     e.preventDefault();
 
     // 3. Visuelles Feedback: Button sperren
@@ -194,7 +194,7 @@
     // 4. Daten einsammeln
     var formData = new FormData(form);
 
-    // 5. Daten im Hintergrund an Formbee senden
+    // 5. Daten im Hintergrund an Formbee senden (AJAX / Fetch)
     fetch(form.action, {
       method: form.method,
       body: formData,
@@ -224,6 +224,7 @@
     });
   });
 })();
+
 
 /*
 (function () {
