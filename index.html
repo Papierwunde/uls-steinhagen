@@ -552,14 +552,19 @@
 
           <!-- Rechts: Kontankt Form -->
           <div class="reveal">
-            <form id="contact-form" class="contact-form" novalidate aria-label="Kontaktformular"><!-- novalidate: Schaltet die 
-              automatische Standard-Fehlermeldung des Browsers ab. Das wird gemacht, weil im Hintergrund ein eigenes JavaScript 
-              (main.js) läuft, das Fehler (wie eine fehlende E-Mail) hübscher und barrierefreier anzeigen soll.-->
+            <form id="contact-form" class="contact-form" action="https://api.formbee.dev/formbee/92c58a39-0c0f-48e5-8b2b-e9d49ca140b1" method="POST" novalidate aria-label="Kontaktformular">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Name *</label>
                   <input type="text" id="name" name="name" placeholder="Max Mustermann" required autocomplete="name" />
                 </div>
+
+                <!-- Honeypot und Zugansschlüssel 
+                <div style="display:none;" aria-hidden="true">
+                  <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+                  <input type="hidden" name="accessKey" value="ACCESS-KEY">
+                </div>
+                -->
 
                 <div class="form-group">
                   <label for="email">E-Mail *</label>
@@ -575,11 +580,11 @@
               <div class="form-group">
                 <label for="subject">Betreff</label>
                 <select id="subject" name="subject">
-                  <option value="">Bitte wählen …</option>
-                  <option value="mitgliedschaft">Mitgliedschaft</option>
-                  <option value="veranstaltung">Veranstaltung</option>
-                  <option value="thema">Umweltthema melden</option>
-                  <option value="sonstiges">Sonstiges</option>
+                  <option value="">Anfrage (Allgemein)</option>
+                  <option value="Mitgliedschaft">Mitgliedschaft</option>
+                  <option value="Veranstaltung">Veranstaltung</option>
+                  <option value="Thema">Umweltthema melden</option>
+                  <option value="Sonstiges">Sonstiges</option>
                 </select>
               </div>
 
@@ -601,7 +606,7 @@
       </div>
     </section>
 
-  </main><
+  </main>
 
 
   <!-- FOOTER -->

@@ -169,32 +169,77 @@
   counters.forEach(function (c) { observer.observe(c); });
 })();
 
-/* ── Contact form – mailto fallback ───────────────────────────── */
-/*
-   The form collects name, email, phone, and message, then opens
-   the user's mail client with a pre-filled mailto: link.
-   No server or backend needed – works on GitHub Pages.
-   EDIT: change the recipient address in the mailto string below.
-*/
+/* ── Contact form ───────────────────────────── */
 (function () {
   var form = document.getElementById("contact-form");
   if (!form) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    // 1. Visuelles Feedback: Button sperren
+    var btn = form.querySelector(".form-submit");
+    var originalText = btn.textContent;
+    btn.textContent = "Nachricht wird gesendet …";
+    btn.disabled = true;
+
+    // 2. Daten einsammeln
+    var formData = new FormData(form);
+
+    // 3. Daten per AJAX (Fetch) im Hintergrund an Formbee senden
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Erfolgsfall: Formular zurücksetzen und Erfolg melden
+        btn.textContent = "Erfolgreich gesendet!";
+        form.reset(); // Leert alle Eingabefelder
+        alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
+        
+        // Nach 4 Sekunden den Button wieder zurücksetzen
+        setTimeout(function () {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        // Fehler vom Server (z. B. falsches Token)
+        alert("Fehler beim Senden. Bitte versuchen Sie es später noch einmal.");
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    })
+    .catch(function(error) {
+      // Netzwerkfehler (z. B. keine Internetverbindung)
+      alert("Es gab ein Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  });
+})();
+/*
+(function () {
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
     var data    = Object.fromEntries(new FormData(form));
+    if (data.honeypot) return;
     var body    = encodeURIComponent(
       "Name: "    + (data.name    || "") + "\n" +
       "E-Mail: "  + (data.email   || "") + "\n" +
       "Telefon: " + (data.phone   || "") + "\n\n" +
                     (data.message || "")
     );
-    var subject = encodeURIComponent("Nachricht von der Website");
-    /* EDIT: replace with your actual contact address */
-    var mailto  = "mailto:info@uls-steinhagen.de?subject=" + subject + "&body=" + body;
+    var subjectText = "ULS Webseite: " + (data.subject || "Anfrage");
+    var subject = encodeURIComponent(subjectText);
+    var mailto  = "mailto:test@irgendwas.com?subject=" + subject + "&body=" + body;
     window.location.href = mailto;
-
+  */
     /* Visual feedback on the submit button */
+  /*
     var btn          = form.querySelector(".form-submit");
     var originalText = btn.textContent;
     btn.textContent  = "E-Mail-Programm wird geöffnet …";
@@ -205,6 +250,7 @@
     }, 4000);
   });
 })();
+*/
 
 /* ── Tab panel system (used on themen.html) ───────────────────── */
 /*
