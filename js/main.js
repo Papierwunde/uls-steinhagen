@@ -170,16 +170,67 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
-// This code prevents the form from redirecting on submit.
-const submitForm = async (event) => {
-    event.preventDefault();
-    const form = document.querySelector('#contact-form');
-    const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
+(function () {
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    // 1. Prüfen, ob Pflichtfelder fehlen
+    if (!form.checkValidity()) {
+      e.preventDefault(); 
+      form.reportValidity(); 
+      return; 
+    }
+
+    // 2. Seite am Neuladen hindern
+    e.preventDefault();
+
+    // 3. Visuelles Feedback: Button sperren
+    var btn = form.querySelector(".form-submit");
+    var originalText = btn.textContent;
+    btn.textContent = "Nachricht wird gesendet …";
+    btn.disabled = true;
+
+    // 4. Daten einsammeln (Exakt wie in der Formbee-Doku)
+    var formData = new FormData(form);
+    var formObject = {};
+    formData.forEach(function (value, key) {
+      formObject[key] = value;
     });
-};
-document.querySelector('#form').addEventListener('submit', submitForm);
+
+    // 5. Daten im Hintergrund an Formbee senden
+    fetch(form.action, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formObject)
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Erfolgsfall: Formular leeren und Erfolg anzeigen
+        btn.textContent = "Erfolgreich gesendet!";
+        form.reset(); 
+        alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
+        
+        setTimeout(function () {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        alert("Fehler beim Senden. Bitte überprüfen Sie die Einstellungen in Formbee.");
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    })
+    .catch(function(error) {
+      alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  });
+})();
+
 
 
 
