@@ -170,38 +170,38 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
+/* ── Contact form ───────────────────────────── */
 (function () {
   var form = document.getElementById("contact-form");
   if (!form) return;
 
-  // Wir machen die Funktion "async", genau wie in der Formbee-Dokumentation
-  form.addEventListener("submit", async function (e) {
+  // Wir nutzen "async" exakt wie in der Formbee-Dokumentation
+  form.addEventListener("submit", async function (ev) {
     
-    // 1. Pflichtfelder prüfen
+    // Pflichtfelder prüfen
     if (!form.checkValidity()) {
-      e.preventDefault(); 
+      ev.preventDefault(); 
       form.reportValidity(); 
       return; 
     }
 
-    // 2. Seite am Neuladen hindern
-    e.preventDefault();
+    ev.preventDefault();
 
-    // 3. Visuelles Feedback: Button sperren
+    // Visuelles Feedback: Button sperren
     var btn = form.querySelector(".form-submit");
     var originalText = btn.textContent;
     btn.textContent = "Nachricht wird gesendet …";
     btn.disabled = true;
 
-    // 4. Daten einsammeln (Exakt aus der Formbee-Dokumentation)
-    const formData = new FormData(form);
+    // Daten in ein JSON-Objekt umwandeln (Exakt aus der Formbee-Doku!)
+    const formData = new FormData(ev.target);
     const formObject = {};
     formData.forEach((value, key) => {
       formObject[key] = value;
     });
 
-    // 5. Senden mit try/catch (Exakt aus der Formbee-Dokumentation)
     try {
+      // Fetch-Anfrage mit echten JSON-Headern absenden
       const response = await fetch(form.action, {
         method: 'POST',
         headers: {
@@ -211,7 +211,7 @@
       });
 
       if (response.ok) {
-        // Erfolgsfall: Formular leeren und Erfolg anzeigen
+        // ERFOLG: Formular leeren und zurücksetzen
         btn.textContent = "Erfolgreich gesendet!";
         form.reset(); 
         alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
@@ -221,20 +221,21 @@
           btn.disabled = false;
         }, 4000);
       } else {
-        // Der Formbee-Server lehnt den Token oder die Domain ab
-        alert("Formbee meldet einen Fehler. Bitte prüfen Sie Ihr Token im HTML und ob Ihre GitHub-Domain bei Formbee freigeschaltet ist.");
+        // Fehler vom Server
+        alert("Fehler beim Senden. Bitte überprüfen Sie Ihre Dashboard-Einstellungen.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
     } catch (error) {
       // Netzwerkfehler
       console.error('Error submitting form:', error);
-      alert("Es gab ein Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
+      alert("Fehler bei der Übermittlung. Bitte überprüfen Sie Ihre Verbindung.");
       btn.textContent = originalText;
       btn.disabled = false;
     }
   });
 })();
+
 
 
 
