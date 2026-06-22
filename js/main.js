@@ -170,64 +170,16 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
-(function () {
-  var form = document.getElementById("contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
-    // 1. Prüfen, ob Pflichtfelder fehlen
-    if (!form.checkValidity()) {
-      e.preventDefault(); 
-      form.reportValidity(); 
-      return; 
-    }
-
-    // 2. Seite am Neuladen hindern
-    e.preventDefault();
-
-    // 3. Visuelles Feedback: Button sperren
-    var btn = form.querySelector(".form-submit");
-    var originalText = btn.textContent;
-    btn.textContent = "Nachricht wird gesendet …";
-    btn.disabled = true;
-
-    // 4. Daten einsammeln (Formbee verlangt das native FormData-Objekt!)
-    var formData = new FormData(form);
-
-    // 5. Daten im Hintergrund an Formbee senden
-    fetch(form.action, {
-      method: form.method,
-      body: formData, // Kein JSON.stringify mehr!
-      headers: { 
-        'Accept': 'application/json' // Keine Content-Type Header für FormData!
-      }
-    })
-    .then(function(response) {
-      if (response.ok) {
-        // Erfolgsfall: Formular leeren und Erfolg anzeigen
-        btn.textContent = "Erfolgreich gesendet!";
-        form.reset(); 
-        alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
-        
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }, 4000);
-      } else {
-        // Der Server antwortet mit einem Fehler
-        alert("Fehler beim Senden. Bitte überprüfen Sie Ihr Formbee-Token im HTML.");
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }
-    })
-    .catch(function(error) {
-      // Netzwerkfehler
-      alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
-      btn.textContent = originalText;
-      btn.disabled = false;
+// This code prevents the form from redirecting on submit.
+const submitForm = async (event) => {
+    event.preventDefault();
+    const form = document.querySelector('#contact-form');
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
     });
-  });
-})();
+};
+document.querySelector('#form').addEventListener('submit', submitForm);
 
 
 
