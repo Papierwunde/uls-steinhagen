@@ -170,6 +170,15 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
+const submitForm = async (event) => {
+    event.preventDefault();
+    const form = document.querySelector('#contact-form');
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
+    });
+};
+document.querySelector('#contact-form').addEventListener('submit', submitForm);
 (function () {
   var form = document.getElementById("contact-form");
   if (!form) return;
