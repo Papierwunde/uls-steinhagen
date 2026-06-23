@@ -220,7 +220,7 @@ form.addEventListener("submit", async (e) => {
 
     // 2. EMAIL NUR BEI ERFOLG
     const mailRes = await fetch(
-      "https://duvejzyfbckbtjesbkmw.functions.supabase.co/send-email",
+      "https://duvejzyfbckbtjesbkmw.supabase.co/functions/v1/resend-email",
       {
         method: "POST",
         headers: {
