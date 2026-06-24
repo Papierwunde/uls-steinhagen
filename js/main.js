@@ -135,11 +135,7 @@
   });
 })();
 
-/* ── Counter animation for stats ──────────────────────────────── */
-/*
-   HOW TO USE: add data-target="33" data-suffix="+" to a .stat-number element.
-   The counter will animate from 0 to the target value on scroll.
-*/
+/* Counter animation for stats */
 (function () {
   var counters = document.querySelectorAll(".stat-number[data-target]");
   if (!counters.length) return;
@@ -150,6 +146,7 @@
       var el       = entry.target;
       var target   = parseInt(el.dataset.target, 10);
       var suffix   = el.dataset.suffix || "";
+      var prefix   = el.dataset.prefix || "";
       var duration = 1600;
       var start    = performance.now();
 
@@ -157,7 +154,7 @@
         var elapsed  = now - start;
         var progress = Math.min(elapsed / duration, 1);
         var eased    = 1 - Math.pow(1 - progress, 3); /* ease-out cubic */
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = prefix + Math.round(target * eased) + suffix;
         if (progress < 1) requestAnimationFrame(tick);
       })(start);
 
@@ -169,7 +166,7 @@
 })();
 
 
-/* ── Contact form ───────────────────────────── */
+/* ── Contact form ───────────────────────────── 
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabase = createClient(
@@ -251,7 +248,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-
+*/
 
 
 

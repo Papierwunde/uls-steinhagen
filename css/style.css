@@ -1,25 +1,8 @@
-/* =========================================================
-   ULS Steinhagen – Modern Redesign  |  style.css
-   =========================================================
-   Color tokens:
-     --green-dark:  #2D5016  (brand / primary)
-     --green-mid:   #4A7C2F  (accent)
-     --green-light: #8BB564  (highlight)
-     --cream:       #F5F2EC  (background)
-     --warm-gray:   #5A5A52  (body text)
-     --white:       #FFFFFF
-   ========================================================= */
-   
-/* =========================================================
-   FONTS
-   ---------------------------------------------------------
-    Two families are used:
-     - Playfair Display  → var(--font-heading)  (used on h1-h4)
-     - Inter             → var(--font-body)     (used everywhere else)
-   ========================================================= */
+/*ULS Steinhagen | style.css*/
 
+/* Fonts | 400 = regular | 500/600 = medium/semibold | 700 = bold */
 @font-face {
-  font-family: 'Playfair Display';                           /* EDIT: rename to your font name */
+  font-family: 'Playfair Display';
   src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -27,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';                              /* EDIT: rename to your font name */
+  font-family: 'Inter';
   src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
@@ -35,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';                              /* EDIT: same name, different weight */
+  font-family: 'Inter';
   src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -43,27 +26,26 @@
 }
 
 @font-face {
-  font-family: 'Inter';                              /* EDIT: same name, semibold weight */
+  font-family: 'Inter';
   src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
-
-/* ── Reset & Base ─────────────────────────────────────── */
+/* Reset & Base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green-dark:  #2D5016;
-  --green-mid:   #4A7C2F;
-  --green-light: #8BB564;
-  --cream:       #F5F2EC;
-  --warm-gray:   #5A5A52;
-  --white:       #FFFFFF;
+  --green-dark:  #2D5016; /*brand/primary*/
+  --green-mid:   #4A7C2F; /*accent*/
+  --green-light: #8BB564; /*highlight*/
+  --cream:       #F5F2EC; /*background*/
+  --warm-gray:   #5A5A52; /*body text*/
+  --white:       #FFFFFF; /*white*/
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;         /*h1-h4*/
+  --font-body:    'Inter', 'Segoe UI', system-ui, sans-serif; /*everywhere else*/
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -99,7 +81,7 @@ ul { list-style: none; }
   padding-inline: 1.5rem;
 }
 
-/* ── Typography ──────────────────────────────────────── */
+/* Typography */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--green-dark);
@@ -114,43 +96,14 @@ h4 { font-size: 1.1rem; }
 p  { max-width: 68ch; }
 .text-center p { margin-inline: auto; }
 
-
-/* =========================================================
-   ICON SLOTS
-   ---------------------------------------------------------
-   Every decorative icon in this design uses a shared
-   .icon-slot element.  It is an empty inline container
-   sized to 1em × 1em by default (overridden where needed).
-
-   HOW TO ADD YOUR OWN ICON:
-   --------------------------
-   Option A – inline SVG:
-     <span class="icon-slot" aria-hidden="true">
-       <svg viewBox="0 0 24 24" ...>...</svg>
-     </span>
-
-   Option B – <img>:
-     <span class="icon-slot" aria-hidden="true">
-       <img src="../images/icons/my-icon.svg" alt="" />
-     </span>
-
-   Option C – icon font (e.g. Font Awesome):
-     <span class="icon-slot" aria-hidden="true">
-       <i class="fa-solid fa-leaf"></i>
-     </span>
-
-   The slots already have display/size/colour styles set.
-   You usually only need to paste your icon markup inside.
-   ========================================================= */
-
+/* Icon */
 .icon-slot {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  /* size is set by the component that uses the slot */
 }
-/* Make sure SVGs/imgs inside slots fill the slot */
+
 .icon-slot svg,
 .icon-slot img { width: 100%; height: 100%; display: block; }
 
@@ -427,13 +380,14 @@ p  { max-width: 68ch; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero-forest.png');  /* EDIT: your hero background image */
+  background-image: url('../images/ben_frieden-wood-4520351.jpg');
+  filter: blur(4px);
   background-size: cover;
   background-position: center;
-  transform: scale(1.04);
+  transform: scale(1.08);
   transition: transform 8s ease-out;
 }
-.hero-bg.loaded { transform: scale(1); }
+.hero-bg.loaded { transform: scale(1.02); }
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -569,7 +523,7 @@ p  { max-width: 68ch; }
 .about-image-wrap img {
   border-radius: var(--radius-lg);
   width: 100%;
-  height: 387px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   box-shadow: var(--shadow-lg);
 }
@@ -639,12 +593,10 @@ p  { max-width: 68ch; }
 }
 .news-card-img {
   width: 100%;
-  height: 200px;
+  aspect-ratio: auto;
+  /*height: 200px;*/
+  
   object-fit: cover;
-  /*
-     IMAGE SLOT – replace with your own photo:
-     <img class="news-card-img" src="images/my-news-photo.jpg" alt="Beschreibung des Bildes" loading="lazy" />
-  */
 }
 .news-card-body { padding: 1.5rem; }
 .news-card-tag {
@@ -1254,7 +1206,7 @@ footer {
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .about-grid           { grid-template-columns: 1fr; gap: 3rem; }
-  .about-image-wrap img { height: 340px; }
+  /*.about-image-wrap img { height: 340px; }*/
   .about-badge-float    { bottom: -1rem; right: .5rem; }
   .events-layout        { grid-template-columns: 1fr; }
   .next-event-card      { position: static; }
