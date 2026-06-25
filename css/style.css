@@ -776,14 +776,6 @@ p  { max-width: 68ch; }
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.25rem;
   transition: background var(--transition);
-  /*
-     ICON SLOT – add your topic icon inside:
-     <div class="topic-icon" aria-hidden="true">
-       <span class="icon-slot" style="width:26px;height:26px;color:var(--green-dark);">
-         <!-- your icon SVG, img, or icon-font element -->
-       </span>
-     </div>
-  */
 }
 .topic-card:hover .topic-icon { background: var(--green-dark); }
 .topic-icon .icon-slot {
@@ -791,7 +783,7 @@ p  { max-width: 68ch; }
   color: var(--green-dark);
   transition: color var(--transition);
 }
-.topic-card:hover .topic-icon .icon-slot { color: var(--white); }
+.topic-card:hover .topic-icon .icon-slot { filter: brightness(0) saturate(100%) invert(100%) sepia(83%) saturate(0%) hue-rotate(37deg) brightness(105%) contrast(101%); }
 .topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
 .topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
 
