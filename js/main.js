@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // ERST JETZT: Alle Funktionen starten, wenn alles im HTML existiert
             initStickyHeader();
             initMobileNavigation();
+            backToTop();
         })
         .catch(error => console.error("Fehler beim Laden der Website-Komponenten:", error));
 });
@@ -97,12 +98,7 @@ function initMobileNavigation() {
   }, { once: true });
 })();
 
-/* ── Scroll-reveal animations ─────────────────────────────────── */
-/*
-   HOW TO USE: add class="reveal" to any element you want to
-   animate in when it enters the viewport.
-   The CSS handles the initial hidden state; JS adds .is-visible.
-*/
+/* Scroll-reveal animations | The CSS handles the initial hidden state; JS adds .is-visible. */
 (function () {
   var els = document.querySelectorAll(".reveal");
   if (!els.length) return;
@@ -125,8 +121,8 @@ function initMobileNavigation() {
   els.forEach(function (el) { observer.observe(el); });
 })();
 
-/* ── Back-to-top button ───────────────────────────────────────── */
-(function () {
+/* Back-to-top button */
+function backToTop() {
   const btn = document.getElementById("back-to-top");
   if (!btn) return;
 
@@ -138,7 +134,7 @@ function initMobileNavigation() {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-})();
+};
 
 /* ── Smooth scroll for in-page anchor links (#section-id) ─────── */
 (function () {
@@ -185,189 +181,60 @@ function initMobileNavigation() {
 
   counters.forEach(function (c) { observer.observe(c); });
 })();
-
-
-/* ── Contact form ───────────────────────────── 
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-const supabase = createClient(
-  "https://duvejzyfbckbtjesbkmw.supabase.co",
-  "sb_publishable_9FRYywOuh2prirRFPZp3EQ_NVlI0n2W"
-);
-
-const form = document.getElementById("contact-form");
-const button = document.querySelector(".form-submit");
-
-form.dataset.start = Date.now();
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  if (form.honeypot.value) {
-    console.log("Bot erkannt");
-    return;
-  }
-
-  const timeDiff = Date.now() - Number(form.dataset.start);
-  if (timeDiff < 3000) {
-    console.log("zu schnell → Bot vermutet");
-    return;
-  }
-
-  button.disabled = true;
-  const oldText = button.textContent;
-  button.textContent = "Nachricht wird gesendet...";
-
-  try {
-    // 1. DB Insert
-    const { error } = await supabase
-      .from("messages")
-      .insert([{
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value || null,
-        subject: form.subject.value || null,
-        message: form.message.value
-      }]);
-
-    if (error) {
-      console.error(error);
-      alert("Fehler beim Senden");
-      return;
-    }
-    console.log("MAIL FETCH START");
-    
-    // 2. EMAIL NUR BEI ERFOLG
-    const mailRes = await fetch(
-      "https://duvejzyfbckbtjesbkmw.supabase.co/functions/v1/resend-email",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value || null,
-          subject: form.subject.value || null,
-          message: form.message.value
-        })
-      }
-    );
-
-    if (!mailRes.ok) {
-      console.warn("E-Mail konnte nicht gesendet werden");
-    }
-
-    alert("Nachricht erfolgreich gesendet");
-    form.reset();
-    form.dataset.start = Date.now();
-
-  } finally {
-    button.disabled = false;
-    button.textContent = oldText;
-  }
-});
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-console.log("JS geladen");
-
-document.getElementById('form').addEventListener('submit', async (ev) => {
-
-    console.log("Submit ausgelöst");
-
-    ev.preventDefault();
-
-    const formData = new FormData(ev.target);
-
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-
-    console.log("Daten:", data);
-
-    try {
-        console.log("Vor Fetch");
-
-        const response = await fetch(ev.target.action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        console.log("Nach Fetch");
-        console.log("Status:", response.status);
-
-        const text = await response.text();
-        console.log("Response Body:", text);
-
-        if (response.ok) {
-            alert("Erfolgreich gesendet");
-            ev.target.reset();
-        } else {
-            alert("Server Fehler: " + response.status);
-        }
-
-    } catch (err) {
-        console.error("Fetch Fehler:", err);
-        alert("Netzwerkfehler");
-    }
-});
-*/
-
-
-
-
-
-/*
+/* Presseecho 
 (function () {
-  var form = document.getElementById("contact-form");
-  if (!form) return;
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var data    = Object.fromEntries(new FormData(form));
-    if (data.honeypot) return;
-    var body    = encodeURIComponent(
-      "Name: "    + (data.name    || "") + "\n" +
-      "E-Mail: "  + (data.email   || "") + "\n" +
-      "Telefon: " + (data.phone   || "") + "\n\n" +
-                    (data.message || "")
-    );
-    var subjectText = "ULS Webseite: " + (data.subject || "Anfrage");
-    var subject = encodeURIComponent(subjectText);
-    var mailto  = "mailto:test@irgendwas.com?subject=" + subject + "&body=" + body;
-    window.location.href = mailto;
-  */
-    /* Visual feedback on the submit button */
-  /*
-    var btn          = form.querySelector(".form-submit");
-    var originalText = btn.textContent;
-    btn.textContent  = "E-Mail-Programm wird geöffnet …";
-    btn.disabled     = true;
-    setTimeout(function () {
-      btn.textContent = originalText;
-      btn.disabled    = false;
-    }, 4000);
+  const lb    = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightbox-img");
+  const lbClose = document.getElementById("lightbox-close");
+  if (!lb || !lbImg) return;
+
+  document.querySelectorAll("article.press-card").forEach(function (card) {
+    
+    // Wir machen die Karte für Tastatur-Nutzer barrierefrei (fokussierbar)
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+
+    // Funktion zum Öffnen der Lightbox
+    function openPressLightbox() {
+      // Suche das Bild INNERHALB der geklickten Karte
+      const img = card.querySelector("img");
+      if (!img) return; // Falls kein Bild existiert, mach nichts
+
+      lbImg.src = img.dataset.full || img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    }
+
+    // Klick auf die gesamte Karte
+    card.addEventListener("click", openPressLightbox);
+
+    // Öffnen mit der Enter-Taste für Barrierefreiheit
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openPressLightbox();
+      }
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove("open");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  lbClose.addEventListener("click", closeLightbox);
+
+  // Click backdrop (not the image) to close
+  lb.addEventListener("click", function (e) {
+    if (e.target === lb) closeLightbox();
+  });
+
+  // Escape key to close
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
   });
 })();
 */

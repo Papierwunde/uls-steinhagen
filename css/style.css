@@ -165,6 +165,9 @@ p  { max-width: 68ch; }
   color: var(--green-mid);
   margin-bottom: .75rem;
 }
+.page-hero .container .section-label {
+  color: var(--green-light);
+}
 .section-title { margin-bottom: 1rem; }
 .section-intro {
   font-size: 1.1rem;
@@ -380,7 +383,7 @@ p  { max-width: 68ch; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/ben_frieden-wood-4520351.jpg');
+  background-image: url('../images/backgrounds/baum.jpg');
   filter: blur(4px);
   background-size: cover;
   background-position: center;
@@ -798,8 +801,12 @@ p  { max-width: 68ch; }
 .topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
 
 
-/* ── PRESSEECHO (gallery page) ───────────────────────── */
+/* PRESSEECHO (gallery page) */
 #presseecho { background: var(--white); }
+.image-center {
+  display: flex;
+  justify-content: center;
+}
 .press-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1245,7 +1252,7 @@ footer {
   .nav-links .nav-cta,
   .nav-menu .nav-link--cta { margin-top: .5rem; text-align: center; width: 100%; justify-content: center; }
   .nav-toggle { display: flex; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions { align-items: flex-start; } /*flex-direction: column;*/
   .form-row    { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
@@ -1532,7 +1539,39 @@ footer {
   color: var(--white);
   border-color: var(--green-dark);
 }
-
+/* Presseecho 
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.88);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 64px rgba(0,0,0,.6);
+}
+#lightbox-close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+*/
+/* Make press cards cursor:pointer to hint at clickability */
+.press-card { cursor: pointer; }
 /* ── Tabs wrapper for themen.html ─────────────────────── */
 /*
    The .tabs-wrapper groups the .tabs-nav and .tabs-panels together.

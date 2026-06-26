@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Presseberichte und Zeitungsartikel über den ULS Steinhagen." />
+  <meta name="description" content="Presseberichte und Zeitungsartikel über den ULS Steinhagen." /><!-- EDIT -->
   <meta name="theme-color" content="#2D5016" />
-  <title>Presseecho – ULS Steinhagen</title>
+  <title>ULS Steinhagen – Presseecho</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/uls-steinhagen-logo.png">
 
   <!-- Extra style: lightbox overlay for full-size image view -->
   <style>
@@ -16,75 +17,21 @@
        You can remove the entire <style> + <div id="lightbox">
        + <script> block if you don't want this feature.
     ──────────────────────────────────────────────────── */
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.88);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-    }
-    #lightbox.open { display: flex; }
-    #lightbox img {
-      max-width: 90vw;
-      max-height: 88vh;
-      border-radius: var(--radius-md);
-      box-shadow: 0 24px 64px rgba(0,0,0,.6);
-    }
-    #lightbox-close {
-      position: absolute;
-      top: 1.5rem; right: 1.5rem;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.25);
-      color: white;
-      font-size: 1.4rem;
-      line-height: 1;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-    }
-    /* Make press cards cursor:pointer to hint at clickability */
-    .press-card { cursor: pointer; }
+    
   </style>
 </head>
 <body>
 
-  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
-  <header id="navbar" role="banner">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
-        <div class="nav-logo-icon" aria-hidden="true">
-          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
-        </div>
-        <div class="nav-logo-text">
-          <span>ULS Steinhagen</span>
-          <span>Umwelt &amp; Lebensqualität</span>
-        </div>
-      </a>
-      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
-        <a href="ueber-uns.html">Über uns</a>
-        <a href="news.html">Aktuelles</a>
-        <a href="termine.html">Termine</a>
-        <a href="themen.html">Unsere Themen</a>
-        <a href="presseecho.html" aria-current="page">Presseecho</a>
-        <a href="index.html#contact" class="nav-cta">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+ <div id="header-placeholder"></div>
 
   <main id="main">
 
     <!-- Page hero -->
     <div class="page-hero">
       <div class="container">
-        <span class="section-label" style="color:var(--green-light);">Presse</span>
-        <h1>Presseecho</h1><!-- EDIT -->
-        <p>Berichte und Artikel lokaler Medien über den ULS Steinhagen.</p><!-- EDIT -->
+        <span class="section-label">Presse</span>
+        <h1>Presseecho</h1>
+        <p>Berichte und Artikel lokaler Medien über den ULS Steinhagen.</p>
       </div>
     </div>
 
@@ -131,17 +78,16 @@
             </div>
           </article>
           <!-- ── end card ───────────────────────────────── -->
-
+          <a href="deter-gelaende.html">
           <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
+            <img class="press-card-img" src="images/presseecho/detert-gelaende.png" alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
             <div class="press-card-body">
-              <p class="press-card-source">Westfalen-Blatt</p><!-- EDIT -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
+              <p class="press-card-source">Haller Kreisblatt</p><!-- EDIT -->
+              <h4 class="press-card-title">Detert: Gar nicht so öko wie gedacht?</h4><!-- EDIT -->
+              <p class="press-card-date">13. Januar 2022</p><!-- EDIT -->
             </div>
           </article>
-
+          </a>
           <article class="press-card reveal">
             <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
               alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
@@ -182,121 +128,22 @@
             </div>
           </article>
 
-        </div><!-- end .press-grid -->
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ══ LIGHTBOX (full-size image overlay) ══════════════
-       Click anywhere outside the image or the × button
-       to close.  Press Escape key also closes it.
-  ══════════════════════════════════════════════════════ -->
+  <!-- LIGHTBOX (full-size image overlay)
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Vollansicht Presseartikel">
     <button id="lightbox-close" aria-label="Schließen">&times;</button>
     <img id="lightbox-img" src="" alt="" />
   </div>
-
-  <!-- ══ FOOTER ══════════════════════════════════════════ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
-            <div class="nav-logo-icon" aria-hidden="true">
-              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
-            </div>
-            <div class="nav-logo-text" style="color:white;">
-              <span>ULS Steinhagen</span>
-              <span>Umwelt &amp; Lebensqualität</span>
-            </div>
-          </a>
-          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="news.html">Aktuelles</a></li>
-            <li><a href="termine.html">Termine</a></li>
-            <li><a href="themen.html">Unsere Themen</a></li>
-            <li><a href="presseecho.html">Presseecho</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Über uns</h5>
-          <ul>
-            <li><a href="ueber-uns.html">Zum Verein</a></li>
-            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
-            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
-            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Kontakt</h5>
-          <ul>
-            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
-            <li><a href="tel:+4952048911">05204 89118</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
-        <div style="display:flex;gap:1.25rem;">
-          <a href="impressum.html">Impressum</a>
-          <a href="impressum.html#datenschutz">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" aria-label="Zurück nach oben">
-    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
-  </button>
+  -->
+  
+  <div id="footer-placeholder"></div>
 
   <script src="js/main.js"></script>
 
-  <!-- Lightbox JS (self-contained, no dependencies) -->
-  <script>
-    "use strict";
-    (function () {
-      const lb    = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightbox-img");
-      const lbClose = document.getElementById("lightbox-close");
-      if (!lb || !lbImg) return;
-
-      // Open lightbox when a press-card image is clicked
-      document.querySelectorAll(".press-card img[data-full]").forEach(function (img) {
-        img.addEventListener("click", function () {
-          lbImg.src = img.dataset.full || img.src;
-          lbImg.alt = img.alt;
-          lb.classList.add("open");
-          document.body.style.overflow = "hidden";
-          lbClose.focus();
-        });
-      });
-
-      function closeLightbox() {
-        lb.classList.remove("open");
-        lbImg.src = "";
-        document.body.style.overflow = "";
-      }
-
-      lbClose.addEventListener("click", closeLightbox);
-
-      // Click backdrop (not the image) to close
-      lb.addEventListener("click", function (e) {
-        if (e.target === lb) closeLightbox();
-      });
-
-      // Escape key to close
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
-      });
-    })();
-  </script>
 </body>
 </html>
