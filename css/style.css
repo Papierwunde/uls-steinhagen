@@ -188,7 +188,8 @@ p  { max-width: 68ch; }
   border-radius: 2px;
   margin-block: 1rem 2.5rem;
 }
-.section-more {                       /* "Alle ... ansehen" link row */
+/* "Alle ... ansehen" link row */
+.section-more {
   margin-top: 3rem;
   text-align: center;
 }
@@ -377,7 +378,6 @@ p  { max-width: 68ch; }
 .nav-toggle.is-active span:nth-child(3),
 .nav-toggle.is-active .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-
 /* ── HERO ─────────────────────────────────────────────── */
 #hero {
   position: relative;
@@ -393,10 +393,12 @@ p  { max-width: 68ch; }
   filter: blur(4px);
   background-size: cover;
   background-position: center;
-  transform: scale(1.08);
+  transform: scale(1);
   transition: transform 8s ease-out;
 }
-.hero-bg.loaded { transform: scale(1.05); }
+.hero-bg.loaded {
+  transform: scale(1.11);
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1132,9 +1134,9 @@ p  { max-width: 68ch; }
 
 /* ── CONTACT ─────────────────────────────────────────── */
 #contact {
-  background: var(--cream);
+  background: var(--cream);/*
   transform: translateZ(0); 
-  will-change: transform; 
+  will-change: transform; */
 }
 .contact-layout {
   display: grid;
@@ -1314,6 +1316,7 @@ footer > * {
 /* SUBPAGE HERO | vorstand.html, mitgliedschaft.html, ueber-uns.html,
 ziele.html, news.html, presseecho.html, termine.html) */
 .page-hero {
+  border-radius: 0 !important;
   position: relative;
   overflow: hidden;
   background: linear-gradient( /* Verlauf */
@@ -1479,6 +1482,10 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .contact-layout       { grid-template-columns: 1fr; gap: 3rem; }
   .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .topic-content        { grid-template-columns: 1fr; gap: 2rem; }
+  .next-event-card { 
+    position: relative;
+    top: auto;
+  }
 }
 
 @media (max-width: 768px) {
