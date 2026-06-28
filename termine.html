@@ -3,239 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Alle Termine und Veranstaltungen des ULS Steinhagen." /><!-- EDIT -->
+  <meta name="description" content="Alle Termine und Veranstaltungen des ULS Steinhagen." />
   <meta name="theme-color" content="#2D5016" />
-  <title>Termine – ULS Steinhagen</title><!-- EDIT -->
+  <title>ULS Steinhagen – Termine</title>
+  <link rel="icon" type="image/png" href="images/uls-steinhagen-logo.png">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Skip-Link für Barrierefreiheit -->
-  <a class="sr-only" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--green-dark);color:#fff;padding:.5rem 1rem;z-index:9999;">Zum Inhalt springen</a>
-  <!-- NAVBAR -->
-  <header id="navbar" role="banner">
-    <div class="container nav-inner"> <!-- Logo und Text links -->
-      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Alle Termine">
-        <div class="nav-logo-icon" aria-hidden="true">
-          <span class="icon-slot">
-             <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum" />
-          </span>
-        </div>
-        <div class="nav-logo-text">
-          <span>ULS Steinhagen</span>
-          <span>Umwelt &amp; Lebensqualität</span>
-        </div>
-      </a>
 
-      <!-- Mobile Hamburger (JS controlled) 
-           aria-controls="nav-links" verknüpft den Button technisch mit der Navigation -->
-      <button
-        id="nav-toggle"
-        class="nav-toggle"
-        aria-controls="nav-links"
-        aria-expanded="false"
-        aria-label="Menü öffnen"
-      >
-        <span></span><span></span><span></span> <!-- Hamburger Striche -->
-      </button>
-
-      <!-- Main navigation links | "nav-cta" (Call to Action) lässt sie aussehen wie ein button. -->
-      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
-        <a href="verein.html">Verein</a>
-        <a href="aktuelles.html">Aktuelles</a>
-        <a href="themen.html">Unsere Themen</a>
-        <a href="Presseecho.html">Presseecho</a>
-        <a href="termine.html" >Termine</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+  
   <main id="main">
-
-    <!-- Page hero -->
     <div class="page-hero">
       <div class="container">
-        <span class="section-label" style="color:var(--green-light);">Kalender</span>
-        <h1>Alle Termine</h1><!-- EDIT -->
-        <p>Vorträge, Mitgliederversammlungen, Aktionen und mehr.</p><!-- EDIT -->
+        <span class="section-label">Kalender</span>
+        <h1>Termine</h1>
+        <p>Vorträge, Mitgliederversammlungen, Aktionen und mehr.</p>
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════════════
-         TIMELINE
-         ══════════════════════════════════════════════════
-         Structure:
-           <p class="tl-year">JJJJ</p>   ← year heading
-           <div class="tl-item">          ← one event row
-             .tl-date                     ← date string
-             .tl-content                  ← title + description + tag
-           </div>
-
-         HOW TO ADD AN EVENT:
-         1. Duplicate a .tl-item block.
-         2. Edit .tl-date, h4, p and .tl-tag.
-         3. Place it in the correct year group.
-         4. Add a new .tl-year if you start a new year.
-
-         HOW TO ADD A TAG:
-         <span class="tl-tag">Vortrag</span>
-         Common tags: Vortrag · Aktion · Mitgliederversammlung · Exkursion · Sonstiges
-    ══════════════════════════════════════════════════ -->
     <section class="page-content bg-white" aria-label="Terminliste">
       <div class="container">
         <div class="timeline">
-
-          <!-- ── 2026 ─────────────────────────────────── -->
           <p class="tl-year">2026</p>
 
-          <!-- Duplicate this block to add events -->
           <div class="tl-item reveal">
-            <div class="tl-date">18. Januar 2026</div><!-- EDIT: exact date or "Frühjahr 2026" etc. -->
+            <div class="event-date-box" aria-label="14. März">
+                <span class="event-day">14</span>
+                <span class="event-month">Mär</span>
+            </div>
+            
             <div class="tl-content">
-              <h4>Jahresempfang 2026</h4><!-- EDIT -->
-              <p>Vortrag: „Walderlebnispfad Ascheloh" – Hartmut Lüker, BUND Halle/W. | Ort: Alte Feuerwehr Amshausen | Zeit: 19:00 Uhr</p><!-- EDIT -->
-              <span class="tl-tag">Vortrag</span><!-- EDIT: tag -->
+              <h4>Müllsammelaktion</h4>
+              <p>Alljährliche Müllsammelaktion der Gemeinde Steinhagen!</p>
+              <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true">
+                      <img src="images/icons/aktion.svg" alt="Aktion" class="icon-slot">
+                    </span>
+                    Müllsammelaktion
+              </span>
+              <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true">
+                      <img src="images/icons/ort.svg" alt="Ort" class="icon-slot">
+                    </span>
+                    Steinhagen
+              </span>
+              <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true">
+                      <img src="images/icons/uhr.svg" alt="Uhr" class="icon-slot">
+                    </span>
+                    16:00 Uhr
+              </span>
             </div>
           </div>
 
           <div class="tl-item reveal">
-            <div class="tl-date">Frühjahr 2026</div><!-- EDIT -->
+            <div class="tl-date">Frühjahr 2026</div>
             <div class="tl-content">
-              <h4>Jahreshauptversammlung mit Vortrag</h4><!-- EDIT -->
-              <p>Referentin: Elke Schwarzer – „Leben in der Laubstreu"</p><!-- EDIT -->
+              <h4>Jahreshauptversammlung mit Vortrag</h4>
+              <p>Referentin: Elke Schwarzer – „Leben in der Laubstreu"</p>
               <span class="tl-tag">Mitgliederversammlung</span>
             </div>
           </div>
 
           <div class="tl-item reveal">
-            <div class="tl-date">März 2026</div><!-- EDIT -->
+            <div class="tl-date">März 2026</div>
             <div class="tl-content">
-              <h4>Müllsammelaktion Steinhagen</h4><!-- EDIT -->
-              <p>Gemeinsam die Natur von Müll befreien – alle sind willkommen!</p><!-- EDIT -->
+              <h4>Müllsammelaktion Steinhagen</h4>
+              <p>Gemeinsam die Natur von Müll befreien – alle sind willkommen!</p>
               <span class="tl-tag">Aktion</span>
             </div>
           </div>
 
           <div class="tl-item reveal">
-            <div class="tl-date">Sommer 2026</div><!-- EDIT -->
+            <div class="tl-date">Sommer 2026</div>
             <div class="tl-content">
-              <h4>Stadtradeln</h4><!-- EDIT -->
-              <p>Der Verein nimmt wieder am bundesweiten Stadtradeln-Wettbewerb teil.</p><!-- EDIT -->
+              <h4>Stadtradeln</h4>
+              <p>Der Verein nimmt wieder am bundesweiten Stadtradeln-Wettbewerb teil.</p>
               <span class="tl-tag">Aktion</span>
             </div>
           </div>
 
-          <!-- ── 2025 ─────────────────────────────────── -->
           <p class="tl-year">2025</p>
 
           <div class="tl-item reveal">
-            <div class="tl-date">Datum eintragen</div><!-- EDIT -->
+            <div class="tl-date">Datum eintragen</div>
             <div class="tl-content">
-              <h4>Titel der Veranstaltung</h4><!-- EDIT -->
-              <p>Kurze Beschreibung der Veranstaltung.</p><!-- EDIT -->
-              <span class="tl-tag">Vortrag</span><!-- EDIT -->
+              <h4>Titel der Veranstaltung</h4>
+              <p>Kurze Beschreibung der Veranstaltung.</p>
+              <span class="tl-tag">Vortrag</span>
             </div>
           </div>
 
           <div class="tl-item reveal">
-            <div class="tl-date">Datum eintragen</div><!-- EDIT -->
+            <div class="tl-date">Datum eintragen</div>
             <div class="tl-content">
-              <h4>Titel der Veranstaltung</h4><!-- EDIT -->
-              <p>Kurze Beschreibung der Veranstaltung.</p><!-- EDIT -->
-              <span class="tl-tag">Aktion</span><!-- EDIT -->
+              <h4>Titel der Veranstaltung</h4>
+              <p>Kurze Beschreibung der Veranstaltung.</p>
+              <span class="tl-tag">Aktion</span>
             </div>
           </div>
 
-          <!-- ── 2024 ─────────────────────────────────── -->
           <p class="tl-year">2024</p>
 
           <div class="tl-item reveal">
-            <div class="tl-date">Datum eintragen</div><!-- EDIT -->
+            <div class="tl-date">Datum eintragen</div>
             <div class="tl-content">
-              <h4>Titel der Veranstaltung</h4><!-- EDIT -->
-              <p>Kurze Beschreibung der Veranstaltung.</p><!-- EDIT -->
-              <span class="tl-tag">Vortrag</span><!-- EDIT -->
+              <h4>Titel der Veranstaltung</h4>
+              <p>Kurze Beschreibung der Veranstaltung.</p>
+              <span class="tl-tag">Vortrag</span>
             </div>
           </div>
-
-          <!-- Add more years by repeating the pattern above -->
-
-        </div><!-- end .timeline -->
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
-            <div class="nav-logo-icon" aria-hidden="true">
-              <span class="icon-slot">
-                <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum">
-              </span>
-            </div>
-            <div class="nav-logo-text">
-              <span>ULS Steinhagen</span>
-              <span>Umwelt &amp; Lebensqualität</span>
-            </div>
-          </a>
-          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V.</p>
-        </div>
-
-        <!-- Navigation Spalte -->
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="news.html">Aktuelles</a></li>
-            <li><a href="termine.html">Termine</a></li>
-            <li><a href="themen.html">Unsere Themen</a></li>
-            <li><a href="presseecho.html">Presseecho</a></li>
-          </ul>
-        </div>
-
-        <!-- Über uns Spalte-->
-        <div class="footer-col">
-          <h5>Über uns</h5>
-          <ul>
-            <li><a href="ueber-uns.html">Zum Verein</a></li>
-            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
-            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
-            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
-          </ul>
-        </div>
-
-        <!-- Kontakt Spalte -->
-        <div class="footer-col">
-          <h5>Kontakt</h5>
-          <ul>
-            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
-            <li><a href="tel:+4952048911">05204 89118</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <span>&copy; Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
-        <div class="footer-bottom-right">
-          <a href="impressum.html">Impressum</a>
-          <a href="impressum.html#datenschutz">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" aria-label="Zurück nach oben">
-    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
-  </button>
+  <div id="footer-placeholder"></div>
 
   <script src="js/main.js"></script>
 </body>

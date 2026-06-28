@@ -70,8 +70,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 a  { color: inherit; text-decoration: none; }
+
+
 ul { list-style: none; }
 
 .container {
@@ -486,9 +492,57 @@ p  { max-width: 68ch; }
 
 /* ── STATS BAR ───────────────────────────────────────── */
 #stats {
-  background: var(--green-dark);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient( /* Verlauf */
+    180deg,
+    var(--green-mid) 0%,
+    var(--green-dark) 100%
+  );
   padding-block: 2.5rem;
   scroll-margin-top: 72px;
+}
+#stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/backgrounds/noise.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  /* Chrome/Safari */
+  -webkit-mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+  /* Firefox/others */
+  mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+}
+#stats::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: /*linear-gradient(  Accent Gradient 
+    90deg,
+    rgba(120, 255, 237, 0.096) 10%,
+    rgba(0, 0, 0, 0) 100%
+  ),*/
+    radial-gradient( /* Vignette */
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+#stats > * {
+  position: relative;
+  z-index: 1;
 }
 .stats-grid {
   display: grid;
@@ -540,6 +594,55 @@ p  { max-width: 68ch; }
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   text-align: center;
+  background: linear-gradient( /* Verlauf */
+    180deg,
+    var(--green-mid) 0%,
+    var(--green-dark) 100%
+  );
+}
+.about-badge-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/backgrounds/noise.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  /* Chrome/Safari */
+  -webkit-mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+  /* Firefox/others */
+  mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+}
+.about-badge-float::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: /*linear-gradient(  Accent Gradient 
+    90deg,
+    rgba(120, 255, 237, 0.096) 10%,
+    rgba(0, 0, 0, 0) 100%
+  ),*/
+    radial-gradient( /* Vignette */
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+.about-badge-float > * {
+  position: relative;
+  z-index: 1;
 }
 .about-badge-float strong {
   display: block;
@@ -587,6 +690,7 @@ p  { max-width: 68ch; }
   background: var(--white);
   border-radius: var(--radius-md);
   overflow: hidden;
+  
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -595,9 +699,9 @@ p  { max-width: 68ch; }
   box-shadow: var(--shadow-md);
 }
 .news-card-img {
-  width: 100%;
+  width: 100%;/*
   aspect-ratio: auto;
-  /*height: 200px;*/
+  height: 200px;*/
   
   object-fit: cover;
 }
@@ -718,6 +822,56 @@ p  { max-width: 68ch; }
   color: var(--white);
   position: sticky;
   top: 6rem;
+  background: linear-gradient( /* Verlauf */
+    180deg,
+    var(--green-mid) 0%,
+    var(--green-dark) 100%
+  );
+}
+.next-event-card::before {
+  border-radius: var(--radius-lg);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/backgrounds/noise.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  /* Chrome/Safari */
+  -webkit-mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+  /* Firefox/others */
+  mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+}
+.next-event-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  background: /*linear-gradient(  Accent Gradient 
+    90deg,
+    rgba(120, 255, 237, 0.096) 10%,
+    rgba(0, 0, 0, 0) 100%
+  ),*/
+    radial-gradient( /* Vignette */
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+.next-event-card > * {
+  position: relative;
+  z-index: 1;
 }
 .next-event-label {
   font-size: .78rem;
@@ -782,7 +936,7 @@ p  { max-width: 68ch; }
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.25rem;
   transition: background var(--transition);
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .topic-card:hover .topic-icon { background: var(--green-dark); }
 .topic-icon .icon-slot {
@@ -825,7 +979,7 @@ p  { max-width: 68ch; }
 }
 .press-card-img {
   width: 100%;
-  aspect-ratio: auto;
+  /*aspect-ratio: auto;*/
   object-fit: cover;
   display: block;
   background: var(--cream);
@@ -1062,10 +1216,53 @@ p  { max-width: 68ch; }
 
 /* ── FOOTER ──────────────────────────────────────────── */
 footer {
-  background: var(--green-dark);
-  color: rgba(255,255,255,.8);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient( /* Verlauf */
+    180deg,
+    var(--green-mid) 0%,
+    var(--green-dark) 100%
+  );
   padding-top: 4rem;
   padding-bottom: 0;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/backgrounds/noise.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  /* Chrome/Safari */
+  -webkit-mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+  /* Firefox/others */
+  mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,1)
+  );
+}
+footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient( /* Vignette */
+    ellipse at center,
+    transparent 20%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+}
+footer > * {
+  position: relative;
+  z-index: 1;
 }
 .footer-grid {
   display: grid;
@@ -1110,11 +1307,71 @@ footer {
 .footer-bottom a:hover { color: var(--green-light); }
 
 
-/* ── SUBPAGE HERO (all inner pages) ──────────────────── */
+/* SUBPAGE HERO | vorstand.html, mitgliedschaft.html, ueber-uns.html,
+ziele.html, news.html, presseecho.html, termine.html) */
 .page-hero {
-  background: var(--green-dark);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient( /* Verlauf */
+    180deg,
+    var(--green-dark) 0%,
+    var(--green-mid) 100%
+  );
   padding: 8rem 0 4rem;
   text-align: center;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/backgrounds/noise.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  /* Chrome/Safari */
+  -webkit-mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,1),
+    rgba(0,0,0,0.2)
+  );
+  /* Firefox/others */
+  mask-image: linear-gradient( /* Noise Gradient */
+    to bottom,
+    rgba(0,0,0,1),
+    rgba(0,0,0,0.2)
+  );
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: /*linear-gradient(  Accent Gradient 
+    90deg,
+    rgba(120, 255, 237, 0.096) 10%,
+    rgba(0, 0, 0, 0) 100%
+  ),*/
+    radial-gradient( /* Vignette */
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+.page-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.page-hero__subtitle {
+  color: rgba(255,255,255,.75);
+  font-size: 1.1rem;
+  max-width: 60ch;
 }
 .page-hero h1 { color: var(--white); margin-bottom: .75rem; }
 .page-hero p  { color: rgba(255,255,255,.75); font-size: 1.1rem; margin-inline: auto; }
@@ -1170,7 +1427,7 @@ footer {
 /* ── Scroll reveal ───────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  /*transform: translateY(24px);*/
   transition: opacity .65s ease, transform .65s ease;
 }
 /* JS adds .is-visible (new pages) or .visible (index.html legacy) */
@@ -1262,38 +1519,17 @@ footer {
   .tl-item     { grid-template-columns: 1fr; gap: .25rem; }
   .vorstand-grid { grid-template-columns: 1fr 1fr; }
   .ueber-nav   { gap: .5rem; }
+  footer { text-align: center; }
+  .footer-brand .nav-logo{ display: inline-flex; }
+  .contact-form .form-submit { align-self: center; }
 }
 
 @media (max-width: 480px) {
   .hero-title    { font-size: 2rem; }
-  .stats-grid    { grid-template-columns: 1fr 1fr; }
+  /*.stats-grid    { grid-template-columns: 1fr 1fr; }*/
   .vorstand-grid { grid-template-columns: 1fr; }
   .board-grid    { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
-}
-
-
-/* =========================================================
-   SUBPAGE COMPONENTS
-   (vorstand.html, mitgliedschaft.html, ueber-uns.html,
-    ziele.html, news.html, presseecho.html, termine.html)
-   ========================================================= */
-
-/* ── Subpage hero tweaks ──────────────────────────────── */
-.page-hero {
-  background: var(--green-dark);
-  padding: 8rem 0 4rem;
-}
-.page-hero__title {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  color: var(--white);
-  margin-bottom: .75rem;
-}
-.page-hero__subtitle {
-  color: rgba(255,255,255,.75);
-  font-size: 1.1rem;
-  max-width: 60ch;
 }
 
 /* ── Breadcrumb ───────────────────────────────────────── */
@@ -1501,7 +1737,19 @@ footer {
   font-style: italic;
   margin-top: .75rem;
 }
-
+/* Datenschutz/Impressum */
+.legal-section { padding-block: 4rem; }
+.legal-section a, .contact-layout a { color: #4A7C2F; }
+.legal-section a:hover, .contact-layout a { color:#8BB564; }
+.legal-section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+.legal-section h3 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+.legal-section p, .legal-section address { max-width: 72ch; line-height: 1.75; font-style: normal; }
+.legal-section p { margin-bottom: .75rem; }
+#datenschutz-heading {
+  scroll-margin-top: 72px;
+  margin-top: 4rem;
+}
+#haftungsausschluss-heading { margin-top: 4rem; }
 /* ── Download block (mitgliedschaft.html) ─────────────── */
 .download-block {
   display: flex;

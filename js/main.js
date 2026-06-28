@@ -4,6 +4,20 @@
    GitHub Pages compatible.
    ============================================================= */
 "use strict";
+/* Scroll to # fix */
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            // Wartet ganz kurz und scrollt dann präzise zum Ziel
+            setTimeout(() => {
+                target.scrollIntoView();
+            }, 50);
+        }
+    }
+});
+
+/* Laden des Headers und Footers */
 document.addEventListener("DOMContentLoaded", function () {
     
     // ZUERST: Header laden
