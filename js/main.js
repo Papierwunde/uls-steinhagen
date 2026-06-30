@@ -320,7 +320,7 @@ function backToTop() {
   });
 })();
 
-/* ── Contact form ───────────────────────────── */
+/* Contact form */
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabase = createClient(
@@ -352,7 +352,7 @@ form.addEventListener("submit", async (e) => {
   button.textContent = "Nachricht wird gesendet...";
 
   try {
-    // 1. DB Insert
+    //DB Insert
     const { error } = await supabase
       .from("messages")
       .insert([{
@@ -370,7 +370,7 @@ form.addEventListener("submit", async (e) => {
     }
     console.log("MAIL FETCH START");
     
-    // 2. EMAIL NUR BEI ERFOLG
+    //EMAIL NUR BEI ERFOLG
     const mailRes = await fetch(
       "https://duvejzyfbckbtjesbkmw.supabase.co/functions/v1/resend-email",
       {

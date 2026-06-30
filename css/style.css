@@ -1288,7 +1288,7 @@ footer > * {
   margin-bottom: 1rem;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: .6rem; }
-.footer-col ul li a {
+.footer-col ul li a, .footer-col ul li {
   font-size: .88rem;
   color: rgba(255,255,255,.65);
   transition: color var(--transition);
@@ -1390,15 +1390,21 @@ ziele.html, news.html, presseecho.html, termine.html) */
 
 
 /* ── TIMELINE (termine.html) ─────────────────────────── */
-.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+}
 .tl-year {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--green-dark);
   margin: 3rem 0 1.5rem;
   padding-bottom: .5rem;
   border-bottom: 2px solid var(--green-light);
+  text-align: center;
 }
 .tl-item {
   display: grid;
