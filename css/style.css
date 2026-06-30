@@ -1533,6 +1533,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   footer { text-align: center; }
   .footer-brand .nav-logo{ display: inline-flex; }
   .contact-form .form-submit { align-self: center; }
+  .hero-actions { justify-content: center; }
 }
 
 @media (max-width: 480px) {

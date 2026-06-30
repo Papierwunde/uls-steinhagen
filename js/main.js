@@ -319,3 +319,86 @@ function backToTop() {
     });
   });
 })();
+
+/* ── Contact form ───────────────────────────── */
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://duvejzyfbckbtjesbkmw.supabase.co",
+  "sb_publishable_9FRYywOuh2prirRFPZp3EQ_NVlI0n2W"
+);
+
+const form = document.getElementById("contact-form");
+const button = document.querySelector(".form-submit");
+
+form.dataset.start = Date.now();
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  if (form.honeypot.value) {
+    console.log("Bot erkannt");
+    return;
+  }
+
+  const timeDiff = Date.now() - Number(form.dataset.start);
+  if (timeDiff < 3000) {
+    console.log("zu schnell → Bot vermutet");
+    return;
+  }
+
+  button.disabled = true;
+  const oldText = button.textContent;
+  button.textContent = "Nachricht wird gesendet...";
+
+  try {
+    // 1. DB Insert
+    const { error } = await supabase
+      .from("messages")
+      .insert([{
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value || null,
+        subject: form.subject.value || null,
+        message: form.message.value
+      }]);
+
+    if (error) {
+      console.error(error);
+      alert("Fehler beim Senden");
+      return;
+    }
+    console.log("MAIL FETCH START");
+    
+    // 2. EMAIL NUR BEI ERFOLG
+    const mailRes = await fetch(
+      "https://duvejzyfbckbtjesbkmw.supabase.co/functions/v1/resend-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value || null,
+          subject: form.subject.value || null,
+          message: form.message.value
+        })
+      }
+    );
+
+    if (!mailRes.ok) {
+      console.warn("E-Mail konnte nicht gesendet werden");
+    }
+
+    alert("Nachricht erfolgreich gesendet");
+    form.reset();
+    form.dataset.start = Date.now();
+
+  } finally {
+    button.disabled = false;
+    button.textContent = oldText;
+  }
+});
+
