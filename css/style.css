@@ -252,7 +252,7 @@ p  { max-width: 68ch; }
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  overflow: hidden;       /* clips images to the circle */
+  overflow: hidden;       /* clips assets to the circle */
   transition: background var(--transition);
 }
 
@@ -389,7 +389,7 @@ p  { max-width: 68ch; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/backgrounds/baum.jpg');
+  background-image: url('../assets/backgrounds/baum.jpg');
   filter: blur(4px);
   background-size: cover;
   background-position: center;
@@ -508,7 +508,7 @@ p  { max-width: 68ch; }
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/backgrounds/noise.webp") repeat;
+  background: url("../assets/backgrounds/noise.webp") repeat;
   background-size: 512px 512px;
   opacity: 0.35;
   pointer-events: none;
@@ -606,7 +606,7 @@ p  { max-width: 68ch; }
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/backgrounds/noise.webp") repeat;
+  background: url("../assets/backgrounds/noise.webp") repeat;
   background-size: 512px 512px;
   opacity: 0.35;
   pointer-events: none;
@@ -841,7 +841,7 @@ p  { max-width: 68ch; }
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/backgrounds/noise.webp") repeat;
+  background: url("../assets/backgrounds/noise.webp") repeat;
   background-size: 512px 512px;
   opacity: 0.35;
   pointer-events: none;
@@ -969,6 +969,10 @@ p  { max-width: 68ch; }
   display: flex;
   justify-content: center;
 }
+.image-left {
+  display: flex;
+  justify-content: left;
+}
 .press-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1056,7 +1060,7 @@ p  { max-width: 68ch; }
   border: 3px solid var(--green-light);
   /*
      IMAGE SLOT:
-     <img class="vorstand-photo" src="images/team/vorname-nachname.jpg"
+     <img class="vorstand-photo" src="assets/team/vorname-nachname.jpg"
           alt="Foto von [Name]" />
   */
 }
@@ -1132,7 +1136,7 @@ p  { max-width: 68ch; }
   background: var(--cream);  /* fallback */
   /*
      IMAGE SLOT:
-     <img class="topic-content-img" src="images/themen/naturschutz.jpg"
+     <img class="topic-content-img" src="assets/themen/naturschutz.jpg"
           alt="Beschreibung des Themas" loading="lazy" />
   */
 }
@@ -1193,7 +1197,12 @@ p  { max-width: 68ch; }
 .contact-info-text span { font-size: .9rem; }
 
 /* Form */
-.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-form {
+  scroll-margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .form-group { display: flex; flex-direction: column; gap: .4rem; }
 .form-group label {
@@ -1242,7 +1251,7 @@ footer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/backgrounds/noise.webp") repeat;
+  background: url("../assets/backgrounds/noise.webp") repeat;
   background-size: 512px 512px;
   opacity: 0.35;
   pointer-events: none;
@@ -1337,7 +1346,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/backgrounds/noise.webp") repeat;
+  background: url("../assets/backgrounds/noise.webp") repeat;
   background-size: 512px 512px;
   opacity: 0.35;
   pointer-events: none;
@@ -1651,7 +1660,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   /*
      IMAGE SLOT – once you have a photo:
      Replace <span class="icon-slot icon-slot--person"> with:
-     <img src="images/vorstand/name.jpg" alt="Foto [Name]" />
+     <img src="assets/vorstand/name.jpg" alt="Foto [Name]" />
      Recommended size: 200×200 px (will be cropped to circle)
   */
 }
@@ -1761,10 +1770,21 @@ ziele.html, news.html, presseecho.html, termine.html) */
   font-style: italic;
   margin-top: .75rem;
 }
+/* Article */
+.article-body a { color: var(--green-mid); }
+.article-body a:hover{ color:var(--green-light); }
+.article-body p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+.article-body h4 {
+  margin-bottom: 1em;
+  color: var(--warm-gray);
+}
 /* Datenschutz/Impressum */
 .legal-section { padding-block: 4rem; }
-.legal-section a, .contact-layout a { color: #4A7C2F; }
-.legal-section a:hover, .contact-layout a { color:#8BB564; }
+.legal-section a, .contact-layout a { color: var(--green-mid); }
+.legal-section a:hover , .contact-layout a:hover { color:var(--green-light); }
 .legal-section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
 .legal-section h3 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
 .legal-section p, .legal-section address { max-width: 72ch; line-height: 1.75; font-style: normal; }

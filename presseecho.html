@@ -6,7 +6,7 @@
   <meta name="description" content="Alles was die Presse über des ULS-Steinhagen e.V. sagt" />
   <meta name="theme-color" content="#2D5016" />
   <title>ULS Steinhagen – Aktuelles</title>
-  <link rel="icon" type="image/png" href="images/uls-steinhagen-logo.png">
+  <link rel="icon" type="image/png" href="assets/uls-steinhagen-logo.png">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -24,100 +24,54 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════════════
-         PRESS GALLERY
-         ══════════════════════════════════════════════════
-         Each .press-card shows a photo/scan of a newspaper
-         article.  Clicking the card opens it full-size in
-         the lightbox (see JS at the bottom).
-
-         HOW TO ADD A PRESS ITEM:
-         1. Duplicate an <article class="press-card"> block.
-         2. Replace the <img> src, alt, and data-full:
-            - src         → small/thumbnail version (same file is fine)
-            - data-full   → the path to the full-resolution scan
-            - alt         → describe the article content for screen readers
-         3. Edit source, title, and date in .press-card-body.
-
-         FILE NAMING TIP:
-           images/presse/nw-2025-01-18-jahresempfang.jpg
-           Use newspaper abbreviation + date + topic.
-
-         TO DISABLE THE LIGHTBOX:
-           Remove data-full from the <img> tags and delete
-           the <div id="lightbox"> block and the <script> below.
-    ══════════════════════════════════════════════════ -->
+    <!-- Galerie -->
     <section class="page-content bg-cream" aria-label="Pressebeiträge">
       <div class="container">
         <div class="press-grid">
-
-          <!-- PRESS CARD ─ duplicate to add more items ────── -->
-          <article class="press-card reveal">
-            <img
-              class="press-card-img"
-              src="images/hero-forest.png"
-              data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel des Artikels eintragen]"
-              loading="lazy"
-            /><!-- EDIT src, data-full, alt -->
-            <div class="press-card-body">
-              <p class="press-card-source">Neue Westfälische</p><!-- EDIT: newspaper name -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
-            </div>
-          </article>
-          <!-- ── end card ───────────────────────────────── -->
-          <a href="deter-gelaende.html">
-          <article class="press-card reveal">
-            <img class="press-card-img" src="images/presseecho/detert-gelaende.png" alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
-            <div class="press-card-body">
-              <p class="press-card-source">Haller Kreisblatt</p><!-- EDIT -->
-              <h4 class="press-card-title">Detert: Gar nicht so öko wie gedacht?</h4><!-- EDIT -->
-              <p class="press-card-date">13. Januar 2022</p><!-- EDIT -->
-            </div>
-          </article>
-          </a>
-          <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
-            <div class="press-card-body">
-              <p class="press-card-source">Lokalzeitung</p><!-- EDIT -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
-            </div>
-          </article>
-
-          <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
-            <div class="press-card-body">
-              <p class="press-card-source">Neue Westfälische</p><!-- EDIT -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
-            </div>
-          </article>
-
-          <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
-            <div class="press-card-body">
-              <p class="press-card-source">Westfalen-Blatt</p><!-- EDIT -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
-            </div>
-          </article>
-
-          <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" data-full="images/hero-forest.png"
-              alt="Zeitungsartikel: [Titel]" loading="lazy" /><!-- EDIT -->
-            <div class="press-card-body">
-              <p class="press-card-source">Lokalzeitung</p><!-- EDIT -->
-              <h4 class="press-card-title">Titel des Artikels</h4><!-- EDIT -->
-              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
-            </div>
-          </article>
-
+          <div>
+            <a href="jhv-2023.html">
+              <article class="press-card reveal">
+                <img class="press-card-img" src="assets/presseecho/jhv_2023/umweltverein.png" alt="Zeitungsartikel: Nicht normal: &quot;Kurze Hose an Silvester&quot;" loading="lazy" />
+                <div class="press-card-body">
+                  <p class="press-card-source">Haller Kreisblatt</p>
+                  <h4 class="press-card-title">Nicht normal: "Kurze Hose an Silvester"</h4>
+                  <p class="press-card-date">01. Dezember 2023</p>
+                </div>
+              </article>
+            </a>
+          </div>
+          <div>
+            <a href="detert-gelaende.html">
+              <article class="press-card reveal">
+                <img class="press-card-img" src="assets/presseecho/detert_gelaende/detert-gelaende.png" alt="Zeitungsartikel: Detert: Gar nicht so öko wie gedacht?" loading="lazy" />
+                <div class="press-card-body">
+                  <p class="press-card-source">Haller Kreisblatt</p>
+                  <h4 class="press-card-title">Detert: Gar nicht so öko wie gedacht?</h4>
+                  <p class="press-card-date">13. Januar 2022</p>
+                </div>
+              </article>
+            </a>
+          </div>
+          <div>
+            <a href="hochwasser.html">
+              <article class="press-card reveal">
+                <img class="press-card-img" src="assets/presseecho/hochwasser/hochwassergefahr.png" alt="Zeitungsartikel: Dilemma: Seltene Pflanze verhindert Großprojekt in Steinhagen" loading="lazy" />
+                <div class="press-card-body">
+                  <p class="press-card-source">Haller Kreisblatt</p>
+                  <h4 class="press-card-title">Dilemma: Seltene Pflanze verhindert Großprojekt in Steinhagen</h4>
+                  <p class="press-card-date">11. Januar 2022</p>
+                </div>
+              </article>
+            </a>          
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Back-Button -->
+    <section class="page-content bg-white">
+      <div class="container image-center">
+        <a href="index.html" class="btn btn-outline">Zurück zur Homepage</a>
       </div>
     </section>
 
