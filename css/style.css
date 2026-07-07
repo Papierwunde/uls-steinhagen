@@ -99,7 +99,7 @@ h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); }
 h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
 h4 { font-size: 1.1rem; }
 
-p  { max-width: 68ch; }
+/* p  { max-width: 68ch; } */
 .text-center p { margin-inline: auto; }
 
 /* Icon */
@@ -968,10 +968,18 @@ p  { max-width: 68ch; }
 .image-center {
   display: flex;
   justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+.image-right {
+  float: right;
+  margin-left: 1.25rem;
+  margin-bottom: .75rem;
+}
+
 .image-left {
-  display: flex;
-  justify-content: left;
+  margin-right: 1.25rem;
+  margin-bottom: .75rem;
 }
 .press-grid {
   display: grid;
@@ -1125,6 +1133,25 @@ p  { max-width: 68ch; }
 .topic-content-text p  { margin-bottom: 1rem; }
 .topic-content-text ul { margin-bottom: 1rem; padding-left: 1.25rem; list-style: disc; }
 .topic-content-text ul li { margin-bottom: .4rem; font-size: .95rem; }
+
+/* Liste in sub-page aktuelles-epa */
+.epa-liste {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+.epa-liste li {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  hyphens: auto;
+}
+.epa-liste .epa-unterliste {
+  list-style-type: circle;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+.epa-liste .epa-unterliste li {
+  margin-bottom: 0.25rem;
+}
 
 /* Image slot inside topic content panels */
 .topic-content-img {
@@ -1491,80 +1518,6 @@ ziele.html, news.html, presseecho.html, termine.html) */
   width: 18px; height: 18px;
   color: var(--white);
 }
-
-
-/* ── Responsive ──────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .about-grid           { grid-template-columns: 1fr; gap: 3rem; }
-  /*.about-image-wrap img { height: 340px; }*/
-  .about-badge-float    { bottom: -1rem; right: .5rem; }
-  .events-layout        { grid-template-columns: 1fr; }
-  .next-event-card      { position: static; }
-  .contact-layout       { grid-template-columns: 1fr; gap: 3rem; }
-  .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .topic-content        { grid-template-columns: 1fr; gap: 2rem; }
-  .next-event-card { 
-    position: relative;
-    top: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  :root { --section-gap: 4.5rem; }
-  .nav-links,
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: 4.5rem; left: 0; right: 0;
-    background: var(--cream);
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 0;
-    box-shadow: var(--shadow-md);
-  }
-  .nav-links.open,
-  .nav-links.is-open,
-  .nav-menu.is-open { display: flex; }
-  .nav-links a,
-  .nav-menu a,
-  .nav-menu .nav-link {
-    display: block;
-    padding: .85rem 0;
-    border-bottom: 1px solid rgba(45,80,22,.08);
-    color: var(--warm-gray) !important;
-    font-size: 1rem;
-    width: 100%;
-  }
-  .nav-links a:last-child,
-  .nav-menu li:last-child a,
-  .nav-menu li:last-child .nav-link { border-bottom: none; }
-  .nav-links .nav-cta,
-  .nav-menu .nav-link--cta { margin-top: .5rem; text-align: center; width: 100%; justify-content: center; }
-  .nav-toggle { display: flex; }
-  .hero-actions { align-items: flex-start; } /*flex-direction: column;*/
-  .form-row    { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .topics-grid { grid-template-columns: 1fr; }
-  .news-grid   { grid-template-columns: 1fr; }
-  .press-grid  { grid-template-columns: 1fr; }
-  .tl-item     { grid-template-columns: 1fr; gap: .25rem; }
-  .vorstand-grid { grid-template-columns: 1fr 1fr; }
-  .ueber-nav   { gap: .5rem; }
-  footer { text-align: center; }
-  .footer-brand .nav-logo{ display: inline-flex; }
-  .contact-form .form-submit { align-self: center; }
-  .hero-actions { justify-content: center; }
-}
-
-@media (max-width: 480px) {
-  .hero-title    { font-size: 2rem; }
-  /*.stats-grid    { grid-template-columns: 1fr 1fr; }*/
-  .vorstand-grid { grid-template-columns: 1fr; }
-  .board-grid    { grid-template-columns: 1fr; }
-  .benefits-grid { grid-template-columns: 1fr; }
-}
-
 /* ── Breadcrumb ───────────────────────────────────────── */
 .breadcrumb {
   display: flex;
@@ -1597,7 +1550,9 @@ ziele.html, news.html, presseecho.html, termine.html) */
 .btn--outline:hover { background: var(--green-dark); color: var(--white); }
 
 /* ── Container narrow variant ─────────────────────────── */
-.container--narrow { max-width: 780px; }
+.container--narrow {
+  max-width: 780px;
+}
 
 /* ── Lead text ────────────────────────────────────────── */
 .lead-text {
@@ -1771,15 +1726,30 @@ ziele.html, news.html, presseecho.html, termine.html) */
   margin-top: .75rem;
 }
 /* Article */
+/* Flex-Layout für Desktop */
+.article-flex {
+  display: flex;
+}
+.article-text {
+  flex: 1;
+}
 .article-body a { color: var(--green-mid); }
 .article-body a:hover{ color:var(--green-light); }
 .article-body p {
   margin-bottom: 1em;
   text-align: justify;
+  hyphens: auto;
+  lang: de;
+}
+.article-body h3 {
+  margin-bottom: 1em;
 }
 .article-body h4 {
   margin-bottom: 1em;
   color: var(--warm-gray);
+}
+.article-body .container {
+  padding-inline: 0;
 }
 /* Datenschutz/Impressum */
 .legal-section { padding-block: 4rem; }
@@ -1872,6 +1842,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
 .tabs-wrapper { width: 100%; }
 .tabs-panels  { width: 100%; }
 
+
+
 /* ── Ziele / content blocks (ziele.html) ──────────────── */
 .content-block {
   margin-bottom: 3rem;
@@ -1895,8 +1867,69 @@ ziele.html, news.html, presseecho.html, termine.html) */
 #site-header .icon-slot--logo,
 .site-header .icon-slot--logo { color: var(--green-dark); }
 
-/* ── Responsive additions for new components ─────────── */
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-grid           { grid-template-columns: 1fr; gap: 3rem; }
+  /*.about-image-wrap img { height: 340px; }*/
+  .about-badge-float    { bottom: -1rem; right: .5rem; }
+  .events-layout        { grid-template-columns: 1fr; }
+  .next-event-card      { position: static; }
+  .contact-layout       { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .topic-content        { grid-template-columns: 1fr; gap: 2rem; }
+  .next-event-card { 
+    position: relative;
+    top: auto;
+  }
+}
+
 @media (max-width: 768px) {
+  :root { --section-gap: 4.5rem; }
+  .nav-links,
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 4.5rem; left: 0; right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.open,
+  .nav-links.is-open,
+  .nav-menu.is-open { display: flex; }
+  .nav-links a,
+  .nav-menu a,
+  .nav-menu .nav-link {
+    display: block;
+    padding: .85rem 0;
+    border-bottom: 1px solid rgba(45,80,22,.08);
+    color: var(--warm-gray) !important;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .nav-links a:last-child,
+  .nav-menu li:last-child a,
+  .nav-menu li:last-child .nav-link { border-bottom: none; }
+  .nav-links .nav-cta,
+  .nav-menu .nav-link--cta { margin-top: .5rem; text-align: center; width: 100%; justify-content: center; }
+  .nav-toggle { display: flex; }
+  .hero-actions { align-items: flex-start; } /*flex-direction: column;*/
+  .form-row    { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .topics-grid { grid-template-columns: 1fr; }
+  .news-grid   { grid-template-columns: 1fr; }
+  .press-grid  { grid-template-columns: 1fr; }
+  .tl-item     { grid-template-columns: 1fr; gap: .25rem; }
+  .vorstand-grid { grid-template-columns: 1fr 1fr; }
+  .ueber-nav   { gap: .5rem; }
+  footer { text-align: center; }
+  .footer-brand .nav-logo{ display: inline-flex; }
+  .contact-form .form-submit { align-self: center; }
+  .hero-actions { justify-content: center; }
+
   .board-grid    { grid-template-columns: 1fr 1fr; }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
   .download-block { flex-direction: column; align-items: flex-start; }
@@ -1905,4 +1938,12 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .ueber-subnav { gap: .5rem; }
   .tabs-nav { gap: .25rem; }
   .tab-btn  { font-size: .82rem; padding: .55rem .85rem; }
+  .article-flex  { flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  .hero-title    { font-size: 2rem; }
+  /*.stats-grid    { grid-template-columns: 1fr 1fr; }*/
+  .vorstand-grid { grid-template-columns: 1fr; }
+  .board-grid    { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
 }
