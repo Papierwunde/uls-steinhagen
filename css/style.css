@@ -1933,12 +1933,17 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .board-grid    { grid-template-columns: 1fr 1fr; }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
   .download-block { flex-direction: column; align-items: flex-start; }
-  .fees-table td,
-  .fees-table th { padding: .65rem .85rem; }
+  .fees-table td, .fees-table th { padding: .65rem .85rem; }
   .ueber-subnav { gap: .5rem; }
   .tabs-nav { gap: .25rem; }
   .tab-btn  { font-size: .82rem; padding: .55rem .85rem; }
   .article-flex  { flex-direction: column; align-items: center; }
+  .image-right, .image-left {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: .75rem;
+    margin-top: .75rem;
+  }
 }
 @media (max-width: 480px) {
   .hero-title    { font-size: 2rem; }
