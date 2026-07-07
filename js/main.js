@@ -398,6 +398,7 @@ function checkFormDataset() {
       }
 
       alert("Nachricht erfolgreich gesendet");
+      console.warn("Nachricht erfolgreich gesendet");
       form.reset();
       form.dataset.start = Date.now();
 
