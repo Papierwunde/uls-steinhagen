@@ -4,6 +4,7 @@
    GitHub Pages compatible.
    ============================================================= */
 "use strict";
+console.log("JS geladen");
 /* Scroll to # fix */
 window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -329,14 +330,9 @@ const supabase = createClient(
 );
 
 const form = document.getElementById("contact-form");
-const button = document.querySelector(".form-submit");
-function checkFormDataset() {
-  if (!form.dataset) {
-    console.log("Keine form.dataset");
-    return;
-  }
+if (form) {
+  const button = document.querySelector(".form-submit");
   form.dataset.start = Date.now();
-
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -398,7 +394,7 @@ function checkFormDataset() {
       }
 
       alert("Nachricht erfolgreich gesendet");
-      console.warn("Nachricht erfolgreich gesendet");
+      console.log("Nachricht erfolgreich gesendet");
       form.reset();
       form.dataset.start = Date.now();
 
