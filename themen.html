@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Themen des ULS Steinhagen e.V." />
+  <meta name="description" content="Alle Themen des ULS-Steinhagen e.V." />
   <meta name="theme-color" content="#2D5016" />
   <title>ULS Steinhagen – Themen</title>
   <link rel="icon" type="image/png" href="assets/uls-steinhagen-logo.png">
@@ -14,213 +14,383 @@
   <div id="header-placeholder"></div>
 
   <main id="main">
-
-    <!-- Page hero -->
     <div class="page-hero">
       <div class="container">
-        <span class="section-label" style="color:var(--green-light);">Themen</span>
-        <h1>Unsere Themenfelder</h1><!-- EDIT -->
-        <p>Diese Bereiche beschäftigen uns – hier setzen wir uns aktiv ein.</p><!-- EDIT -->
+        <span class="section-label">Unsere Themenfelder</span>
+        <h1>Themen</h1>
+        <p>Diese Bereiche beschäftigen uns – hier setzen wir uns aktiv ein.</p>
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════════════
-         TABS – one tab per topic
-         ══════════════════════════════════════════════════
-         STRUCTURE:
-           .tabs-nav          → the row of tab buttons
-             .tab-btn         → one button per topic
-               data-tab="id"  → links to the matching panel
-           .tab-panel         → the content area (hidden by default)
-             id="id"          → must match data-tab above
-
-         HOW TO ADD A TOPIC:
-         1. Add a new <button class="tab-btn"> in .tabs-nav.
-            Set data-tab="your-new-id".
-         2. Add a matching <section class="tab-panel" id="your-new-id">.
-         3. Fill the panel with .topic-content (see below).
-
-         HOW TO LINK FROM index.html:
-           <a href="themen.html#naturschutz"> opens this page
-           and JS (main.js) automatically activates the matching tab.
-
-         PANEL CONTENT STRUCTURE:
-           .topic-content
-             .topic-content-text  → text column (h3, p, ul)
-             <img .topic-content-img>  → photo column
-           Below that: any extra blocks (accordion items, more assets, etc.)
-    ══════════════════════════════════════════════════ -->
     <section class="page-content bg-white" aria-label="Themen">
       <div class="container">
+        <div class="tabs-wrapper">
+          <nav class="tabs-nav" role="tablist" aria-label="Themenfelder">
 
-        <!-- ── Tab navigation ─────────────────────────── -->
-        <nav class="tabs-nav" role="tablist" aria-label="Themenfelder">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="glyphosat" data-tab="glyphosat">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/umweltschaedlich.svg" alt="Großes X" class="icon-slot">
+              </span>
+              Glyphosat
+            </button>
 
-          <!-- EDIT: tab label and data-tab value (must match panel id below) -->
-          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="naturschutz"    data-tab="naturschutz">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span><!-- ICON SLOT -->
-            Naturschutz
-          </button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="laerm-verkehr"  data-tab="laerm-verkehr">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
-            Lärm &amp; Verkehr
-          </button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="klimaschutz"    data-tab="klimaschutz">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
-            Klimaschutz
-          </button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="gewerbe-planung" data-tab="gewerbe-planung">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
-            Gewerbe &amp; Planung
-          </button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="bildung"        data-tab="bildung">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
-            Bildung &amp; Schule
-          </button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="hochwasser"     data-tab="hochwasser">
-            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
-            Hochwasser &amp; Wasser
-          </button>
-          <!-- ADD MORE TABs HERE – copy a button and a panel below -->
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="gib" data-tab="gib">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/laerm.svg" alt="Blatt" class="icon-slot">
+              </span>
+              GIB
+            </button>
 
-        </nav><!-- end .tabs-nav -->
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="flora-fauna" data-tab="flora-fauna">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/klimaschutz.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Flora & Fauna
+            </button>
 
-        <!-- ══════════════════════════════════════════════
-             TAB PANELS
-             ══════════════════════════════════════════════
-             Each panel is shown/hidden by JS.
-             The first panel has class="tab-panel active".
-        ══════════════════════════════════════════════ -->
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="gewerbepark" data-tab="gewerbepark">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/bauen.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Gewerbepark
+            </button>
 
-        <!-- ── PANEL: Naturschutz ──────────────────────── -->
-        <section class="tab-panel active" id="naturschutz" role="tabpanel" aria-labelledby="tab-naturschutz">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Naturschutz</h3><!-- EDIT -->
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="baume" data-tab="baume">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/baum.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Bäume
+            </button>
+
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="feinstaub" data-tab="feinstaub">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/luftverschmutzung.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Feinstaub
+            </button>
+
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="hochwasserschutz" data-tab="hochwasserschutz">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/hochwasser.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Hochwasserschutz
+            </button>
+
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="digitalisierung" data-tab="digitalisierung">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/digitalisierung.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Digitalisierung
+            </button>
+
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="strahlenbelastung" data-tab="strahlenbelastung">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/funkwellen.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Strahlenbelastung
+            </button>
+
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="laermschutz" data-tab="laermschutz">
+              <span class="icon-slot" aria-hidden="true">
+                <img src="assets/icons/verkehr.svg" alt="Blatt" class="icon-slot">
+              </span>
+              Lärmschutz
+            </button>
+
+          </nav>
+
+          <section class="tab-panel is-active" id="glyphosat" data-tab="glyphosat" role="tabpanel" aria-labelledby="tab-glyphosat">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h2 class="section-title" id="news-heading">Warum ist das Thema Glyphosat auch für Steinhagener Bürger wichtig?</h2>
+                <div class="divider"></div>
+                <p>
+                  Glyphosat ist das meistverkaufte Pflanzengift der Welt. Es wurde von 
+                  der Firma Monsanto (USA) entwickelt und 1974 unter dem Namen Roundup 
+                  auf den Markt gebracht.
+                </p>
+                <p>
+                  In Deutschland wird es in vielen Bereichen der Landwirtschaft und 
+                  auch in den privaten Hausgärten als preisgünstiges Herbizid verwendet.
+                </p>
+                <p>
+                  Oft wird es auch kurz vor der Aussaat auf die Felder gebracht. Auf 
+                  befestigten Flächen wird es oft verbotener Weise aufgebracht.
+                </p>
+              </div>
+
+              <div class="themen-image-container">
+                <p class="themen-image-text">
+                  Vorher
+                </p>
+                <img class="topic-content-img image-center" src="assets/themen/glyphosat/Mai-2017-2.jpg" width="548" height="411" alt="Natur vor Glyphosat" loading="lazy" />
+              </div>
               <p>
-                <!-- EDIT: intro paragraph for this topic -->
-                Hier steht ein kurzer einleitender Text zum Thema Naturschutz.
-                Beschreiben Sie, was der Verein konkret tut und welche Ziele verfolgt werden.
+                <a href=".html">Zum Presseecho!</a><br/><br/>
+                <strong>Informative Links zum Thema Glyphosat:</strong><br/>
+                <a href="https://de.wikipedia.org/wiki/Glyphosat" target="_blank">Wikipedia</a><br/>
+                <a href="https://www.faz.net/aktuell/wissen/thema/glyphosat" target="_blank">Frankfurter Allgemeine Zeitung</a><br/>
+                <a href="http://www.kreislauf-leben.de/index.php/glyphosat/134-glyphosat-in-der-nahrungskette" target="_blank">Forum für Sauberes Trinkwasser</a><br/>
               </p>
-              <p>
-                <!-- EDIT: second paragraph (optional – delete if not needed) -->
-                Weiterer Absatz mit Hintergrundinformationen oder konkreten Projekten.
-              </p>
-              <!-- EDIT: bullet list – add or remove items as needed -->
-              <ul>
-                <li>Nisthilfen für heimische Vogelarten</li><!-- EDIT -->
-                <li>Baumpflanzungen und Biotoppflege</li><!-- EDIT -->
-                <li>Artenschutz-Projekte in der Gemeinde</li><!-- EDIT -->
-              </ul>
+              <div class="themen-image-container">
+                <p class="themen-image-text">
+                  Nachher
+                </p>
+                <img class="topic-content-img image-center" src="assets/themen/glyphosat/Mai-2017.jpg" width="548" height="411" alt="Natur nach Glyphosat" loading="lazy" />
+              </div>
+
             </div>
-            <!-- IMAGE SLOT: topic photo (right column on desktop) -->
-            <img
-              class="topic-content-img"
-              src="assets/hero-forest.png"
-              alt="Foto zum Thema Naturschutz"<!-- EDIT: descriptive alt text -->
-              loading="lazy"
-            /><!-- EDIT src -->
-          </div>
-          <!-- Optional: add more content blocks below the two-column layout -->
-        </section>
+          </section>
 
-        <!-- ── PANEL: Lärm & Verkehr ───────────────────── -->
-        <section class="tab-panel" id="laerm-verkehr" role="tabpanel" aria-labelledby="tab-laerm-verkehr">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Lärm &amp; Verkehr</h3><!-- EDIT -->
-              <p>
-                Hier steht ein kurzer einleitender Text zum Thema Lärm &amp; Verkehr.<!-- EDIT -->
-              </p>
-              <ul>
-                <li>Lärmaktionsplan Steinhagen</li><!-- EDIT -->
-                <li>Sichere Radwege in der Gemeinde</li><!-- EDIT -->
-                <li>Beteiligung an Planungsverfahren</li><!-- EDIT -->
-              </ul>
+          <section class="tab-panel" id="gib" role="tabpanel" aria-labelledby="tab-gib">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Industriegebiet GIB Langebrede</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema Lärm &amp; Verkehr.
+                </p>
+                <ul>
+                  <li>Lärmaktionsplan Steinhagen</li>
+                  <li>Sichere Radwege in der Gemeinde</li>
+                  <li>Beteiligung an Planungsverfahren</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Lärm und Verkehr" loading="lazy" />
             </div>
-            <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Lärm und Verkehr" loading="lazy" /><!-- EDIT -->
-          </div>
-        </section>
+          </section>
 
-        <!-- ── PANEL: Klimaschutz ──────────────────────── -->
-        <section class="tab-panel" id="klimaschutz" role="tabpanel" aria-labelledby="tab-klimaschutz">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Klimaschutz</h3><!-- EDIT -->
-              <p>
-                Hier steht ein kurzer einleitender Text zum Thema Klimaschutz.<!-- EDIT -->
-              </p>
-              <ul>
-                <li>Informationsveranstaltungen zu Klimaneutralität</li><!-- EDIT -->
-                <li>PFAS-Chemikalien und ihre Auswirkungen</li><!-- EDIT -->
-                <li>Klimawandelfolgen in der Region</li><!-- EDIT -->
-              </ul>
+          <section class="tab-panel" id="flora-fauna" role="tabpanel" aria-labelledby="tab-flora-fauna">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Flora & Fauna</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema flora-fauna.
+                </p>
+                <ul>
+                  <li>Informationsveranstaltungen zu Klimaneutralität</li>
+                  <li>PFAS-Chemikalien und ihre Auswirkungen</li>
+                  <li>Klimawandelfolgen in der Region</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema flora-fauna" loading="lazy" />
             </div>
-            <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Klimaschutz" loading="lazy" /><!-- EDIT -->
-          </div>
-        </section>
+          </section>
 
-        <!-- ── PANEL: Gewerbe & Planung ────────────────── -->
-        <section class="tab-panel" id="gewerbe-planung" role="tabpanel" aria-labelledby="tab-gewerbe-planung">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Gewerbe &amp; Planung</h3><!-- EDIT -->
-              <p>
-                Hier steht ein kurzer einleitender Text zum Thema Gewerbe &amp; Planung.<!-- EDIT -->
-              </p>
-              <ul>
-                <li>Begleitung des Gewerbeparks Waldbadstraße</li><!-- EDIT -->
-                <li>Kritische Prüfung von Bebauungsplänen</li><!-- EDIT -->
-                <li>Bürgerbeteiligung bei Planungsverfahren</li><!-- EDIT -->
-              </ul>
+          <section class="tab-panel" id="gewerbepark" role="tabpanel" aria-labelledby="tab-gewerbepark">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Gewerbepark Waldbadstraße/Hagedorn</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema Gewerbe &amp; Planung.
+                </p>
+                <ul>
+                  <li>Begleitung des Gewerbeparks Waldbadstraße</li>
+                  <li>Kritische Prüfung von Bebauungsplänen</li>
+                  <li>Bürgerbeteiligung bei Planungsverfahren</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Gewerbe und Planung" loading="lazy" />
             </div>
-            <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Gewerbe und Planung" loading="lazy" /><!-- EDIT -->
-          </div>
-        </section>
+          </section>
 
-        <!-- ── PANEL: Bildung & Schule ─────────────────── -->
-        <section class="tab-panel" id="bildung" role="tabpanel" aria-labelledby="tab-bildung">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Bildung &amp; Schule</h3><!-- EDIT -->
-              <p>
-                Hier steht ein kurzer einleitender Text zum Thema Bildung &amp; Schule.<!-- EDIT -->
-              </p>
-              <ul>
-                <li>Schulprojekte mit Umweltbezug</li><!-- EDIT -->
-                <li>Zusammenarbeit mit Lehrenden</li><!-- EDIT -->
-                <li>Förderung von Jugendprojekten</li><!-- EDIT -->
-              </ul>
+          <section class="tab-panel" id="baume" role="tabpanel" aria-labelledby="tab-baume">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Bäume für Steinhagen</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema baume &amp; Schule.
+                </p>
+                <ul>
+                  <li>Schulprojekte mit Umweltbezug</li>
+                  <li>Zusammenarbeit mit Lehrenden</li>
+                  <li>Förderung von Jugendprojekten</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema baume" loading="lazy" />
             </div>
-            <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Bildung" loading="lazy" /><!-- EDIT -->
-          </div>
-        </section>
+          </section>
 
-        <!-- ── PANEL: Hochwasser & Wasser ─────────────── -->
-        <section class="tab-panel" id="hochwasser" role="tabpanel" aria-labelledby="tab-hochwasser">
-          <div class="topic-content">
-            <div class="topic-content-text">
-              <h3>Hochwasser &amp; Wasser</h3><!-- EDIT -->
-              <p>
-                Hier steht ein kurzer einleitender Text zum Thema Hochwasser &amp; Wasser.<!-- EDIT -->
-              </p>
-              <ul>
-                <li>Nachhaltiger Hochwasserschutz</li><!-- EDIT -->
-                <li>Regenrückhaltung und Versickerung</li><!-- EDIT -->
-                <li>Saubere Wasserversorgung in Steinhagen</li><!-- EDIT -->
-              </ul>
+          <section class="tab-panel" id="feinstaub" role="tabpanel" aria-labelledby="tab-feinstaub">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Feinstaub</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema feinstaub &amp; Wasser.
+                </p>
+                <ul>
+                  <li>Nachhaltiger feinstaubschutz</li>
+                  <li>Regenrückhaltung und Versickerung</li>
+                  <li>Saubere Wasserversorgung in Steinhagen</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema feinstaub und Wasser" loading="lazy" />
             </div>
-            <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema Hochwasser und Wasser" loading="lazy" /><!-- EDIT -->
-          </div>
-        </section>
+          </section>
 
-      </div><!-- end .container -->
+          <section class="tab-panel" id="hochwasserschutz" role="tabpanel" aria-labelledby="tab-hochwasserschutz">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Hochwasserschutz</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema feinstaub &amp; Wasser.
+                </p>
+                <ul>
+                  <li>Nachhaltiger feinstaubschutz</li>
+                  <li>Regenrückhaltung und Versickerung</li>
+                  <li>Saubere Wasserversorgung in Steinhagen</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema feinstaub und Wasser" loading="lazy" />
+            </div>
+          </section>
+
+          <section class="tab-panel" data-tab="digitalisierung!!!" role="tabpanel" aria-labelledby="tab-digitalisierung">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Digitalisierung</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema feinstaub &amp; Wasser.
+                </p>
+                <ul>
+                  <li>Nachhaltiger feinstaubschutz</li>
+                  <li>Regenrückhaltung und Versickerung</li>
+                  <li>Saubere Wasserversorgung in Steinhagen</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema feinstaub und Wasser" loading="lazy" />
+            </div>
+          </section>
+
+          <section class="tab-panel themen-section-top" id="strahlenbelastung" data-tab="strahlenbelastung" role="tabpanel" aria-labelledby="tab-strahlenbelastung">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h2 class="section-title" id="news-heading">Mobilfunk der 5. Generation</h2>
+                <div class="divider"></div>
+                <p>
+                  Die neue Technologie Mobilfunk hat sich mit rasanter Geschwindigkeit nahezu flächendeckend 
+                  ausgebreitet und dringt in sämtliche Lebensbereiche vor. Mensch und Umwelt werden 
+                  dabei einer ständig steigenden Belastung durch die sogenannte nichtionisierende 
+                  Strahlung ausgesetzt. Was unterscheidet die natürliche Strahlung von der 
+                  künstlichen/technischen Strahlung?
+                </p>
+                <p>
+                  Politik und Industrie negieren oder verharmlosen negative Auswirkungen dieser neuen 
+                  Technologie. Dabei gibt es mittlerweile eine große Anzahl wissenschaftlicher 
+                  Untersuchungen, die ein breites Spektrum an gesundheitsrelevanten Einflüssen auf 
+                  den Menschen belegen, die in der Alltags-Realität der Menschen längst ihre Spuren 
+                  hinterlassen. Mit dem Mobilfunkstandard 5G sollten die Mobilfunknetze weiter verdichtet 
+                  werden.<br/>Die Strahlenbelastung wird weiter steigen.
+                </p>
+                <!--
+                <p>
+                  <a href="presseecho.html">Zum Presseecho hier klicken!</a>
+                </p>
+                -->
+              </div>
+              <img class="topic-content-img image-center" src="assets/themen/strahlenbelastung/5G-20211109_153752-cut.jpg" width="463" height="737" alt="5G Turm" loading="lazy" />
+            </div>
+          </section>
+
+          <section class="tab-panel" data-tab="strahlenbelastung" role="tabpanel" aria-labelledby="tab-strahlenbelastung">
+            <div class="topic-content">
+              <img class="topic-content-img image-center" src="assets/themen/strahlenbelastung/hochspannungsmasten.png" width="463" height="348" alt="Hochspannungsmasten" loading="lazy" />
+           
+              <div class="topic-content-text">
+                <h2 class="section-title" id="news-heading">380 kV- Leitung</h2>
+                <div class="divider"></div>
+                <p>
+                  Bis 80 Meter hohe Strommasten direkt an oder neben Wohnhäusern, ist für viele 
+                  Menschen, die an geplanten neuen Höchstspannungsleitungen wohnen, ein Albtraum. 
+                  Aber ohne neue Stromtrassen geht es nicht. Weil derzeit und künftig besonders 
+                  die Windkraftanlagen in Norddeutschland ausgebaut werden, muss der Strom 
+                  zwangsläufig in den Süden transportiert werden.
+                </p>
+                <p>
+                  Jedoch nicht unbedingt als Freileitung mit Monstermasten, denn die 
+                  Erdverkabelung bietet eine Alternative.
+                </p>
+                <p>
+                  Wie gefährlich ist eine Hochspannungsleitung?
+                </p>
+                <p>
+                  Dass die menschliche Gesundheit durch Hochspannungsleitungen beeinträchtigt wird, 
+                  steht heutzutage aus Frage. Denn unter anderem erzeugen die Leitungen elektrische 
+                  und magnetische Felder, die den Körper beeinflussen können.
+                </p>
+                <p class="grenzwert-titel"><strong>Grenzwerte im Vergleich (bei 50 Hz Wechselstrom):</strong></p>
+
+                <table class="grenzwert-tabelle">
+                  <tr>
+                    <td class="land">Schweiz:</td>
+                    <td class="wert">1,0</td>
+                    <td class="einheit">Mikro-Tesla</td>
+                    <td>(Orte empfindlicher Nutzung)</td>
+                  </tr>
+                  <tr>
+                    <td class="land">Italien:</td>
+                    <td class="wert">3,0</td>
+                    <td class="einheit">Mikro-Tesla</td>
+                    <td>(dauernder Aufenthalt von Menschen)</td>
+                  </tr>
+                  <tr>
+                    <td class="land">Deutschland:</td>
+                    <td class="wert">100,0</td>
+                    <td class="einheit">Mikro-Tesla</td>
+                    <td>(dauernder Aufenthalt von Menschen)</td>
+                  </tr>
+                </table>
+                
+                <p><br/>
+                  Dieser Vergleich zeigt deutlich, dass in Deutschland sehr locker mit den 
+                  Gesundheitsrisiken durch sogenannte Expositionen umgegangen wird.
+                </p>
+                <!--
+                <p>
+                  Schaut auch unter: 
+                  <a href="https://www.keine380kv.de/" target="_blank">
+                    https://www.keine380kv.de/
+                  </a> 
+                </p>
+                
+                <p>
+                  <a href="presseecho.html">Zum Presseecho hier klicken!</a>
+                </p>
+                -->
+              </div>
+            </div>
+            
+          </section>
+          
+          <section class="tab-panel" data-tab="laermschutz!!!" role="tabpanel" aria-labelledby="tab-laermschutz">
+            <div class="topic-content">
+              <div class="topic-content-text">
+                <h3>Verkehr und Lärmschutz</h3>
+                <p>
+                  Hier steht ein kurzer einleitender Text zum Thema feinstaub &amp; Wasser.
+                </p>
+                <ul>
+                  <li>Nachhaltiger feinstaubschutz</li>
+                  <li>Regenrückhaltung und Versickerung</li>
+                  <li>Saubere Wasserversorgung in Steinhagen</li>
+                </ul>
+              </div>
+              <img class="topic-content-img" src="assets/hero-forest.png" alt="Foto zum Thema feinstaub und Wasser" loading="lazy" />
+            </div>
+          </section> 
+          
+        </div>
+      </div>
     </section>
 
+     <!-- Back-Button -->
+    <section class="page-content bg-cream reveal">
+      <div class="container image-center">
+        <a href="index.html" class="btn btn-outline">Zurück zum Start</a>
+      </div>
+    </section>
   </main>
 
   <div id="footer-placeholder"></div>
-
-  <script src="js/main.js" type="module"></script>
+  <script src="js/main.js" type="module" defer></script>
 </body>
 </html>

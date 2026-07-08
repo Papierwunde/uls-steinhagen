@@ -260,14 +260,6 @@ function backToTop() {
      – .tabs-nav contains <button class="tab-btn" data-tab="PANEL-ID"> elements.
      – .tabs-panels contains <div class="tab-panel" id="PANEL-ID"> elements.
      – Clicking a button shows the matching panel, hides all others.
-
-   HOW TO ADD A TAB:
-     1. Add a <button class="tab-btn" data-tab="your-id"> in .tabs-nav.
-     2. Add a <div class="tab-panel" id="your-id"> in .tabs-panels.
-     That's it – no JS changes needed.
-
-   HOW TO REMOVE A TAB:
-     Delete the matching <button> and <div id="..."> pair.
 */
 (function () {
   var wrappers = document.querySelectorAll(".tabs-wrapper");
@@ -283,17 +275,28 @@ function backToTop() {
         var active = btn.dataset.tab === targetId;
         btn.classList.toggle("is-active", active);
         btn.setAttribute("aria-selected", String(active));
-        btn.setAttribute("tabindex",      active ? "0" : "-1");
+        btn.setAttribute("tabindex", active ? "0" : "-1");
       });
-      panels.forEach(function (panel) {
-        var active = panel.id === targetId;
-        panel.classList.toggle("is-active", active);
-        panel.hidden = !active;
-      });
+      panels.forEach(function (panel) { 
+        var active = panel.dataset.tab === targetId; 
+        panel.classList.toggle('is-active', active); 
+        panel.hidden = !active; 
+      }); 
+    } 
+
+    /* URL-Hash Prüfung (Unterstützt ID- und Data-Tab-Suche) */
+    var initialTab = buttons[0].dataset.tab; 
+    var urlHash = window.location.hash.substring(1); 
+
+    if (urlHash) {
+      // Prüft, ob der Hash entweder der ID oder dem data-tab eines Panels entspricht
+      var matchingPanel = wrapper.querySelector('.tab-panel[id="' + urlHash + '"], .tab-panel[data-tab="' + urlHash + '"]');
+      if (matchingPanel) {
+        initialTab = matchingPanel.dataset.tab;
+      }
     }
 
-    /* Activate first tab on load */
-    activate(buttons[0].dataset.tab);
+    activate(initialTab);
 
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
