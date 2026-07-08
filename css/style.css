@@ -101,7 +101,9 @@ h4 { font-size: 1.1rem; }
 
 /* p  { max-width: 68ch; } */
 .text-center p { margin-inline: auto; }
-
+.text-white {
+  color: #FFFFFF;
+}
 /* Icon */
 .icon-slot {
   display: inline-flex;
@@ -582,7 +584,7 @@ h4 { font-size: 1.1rem; }
 .about-image-wrap img {
   border-radius: var(--radius-lg);
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: auto; /*4/3*/
   object-fit: cover;
   box-shadow: var(--shadow-lg);
 }
@@ -962,9 +964,36 @@ h4 { font-size: 1.1rem; }
 .topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
 .topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
 
-
-/* PRESSEECHO (gallery page) */
-#presseecho { background: var(--white); }
+/* Verein */
+.ziele-section h3 { 
+  font-size: 1.1rem; 
+  margin: 1.5rem 0 .5rem; 
+}
+.ziele-section .article-text-center {
+  align-content: center;
+}
+.vorstand-section h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+.mitglied-section p{
+  margin-bottom: .75rem;
+}
+.ziele-section .article-flex {
+  align-items: center;
+  gap: 2.5rem;
+}
+.vorstand-section .article-flex {
+  gap: 1rem;
+}
+.vorstand-section img,
+.mitglied-section img,
+.ziele-section img {
+  box-shadow: var(--shadow-lg);
+}
+#top-zero {
+  margin-top: 0;
+}
 .image-center {
   display: flex;
   justify-content: center;
@@ -976,11 +1005,15 @@ h4 { font-size: 1.1rem; }
   margin-left: 1.25rem;
   margin-bottom: .75rem;
 }
-
 .image-left {
   margin-right: 1.25rem;
   margin-bottom: .75rem;
 }
+.image-left img, .image-right img, .image-center img {
+  border-radius: var(--radius-lg);
+}
+/* PRESSEECHO (gallery page) */
+#presseecho { background: var(--white); }
 .press-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1021,7 +1054,7 @@ h4 { font-size: 1.1rem; }
 .press-card-date { font-size: .82rem; color: var(--warm-gray); }
 
 
-/* ── ÜBER UNS (ueber-uns.html) ───────────────────────── */
+/* ── ÜBER UNS (ueber-uns.html) ───────────────────────── 
 .ueber-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1044,8 +1077,8 @@ h4 { font-size: 1.1rem; }
   color: var(--white);
   border-color: var(--green-dark);
 }
-
-/* Board / Vorstand table */
+*/
+/* Vorstand */
 .vorstand-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1058,19 +1091,13 @@ h4 { font-size: 1.1rem; }
   box-shadow: var(--shadow-sm);
   border-top: 3px solid var(--green-light);
 }
-/* Photo slot inside vorstand card */
 .vorstand-photo {
   width: 72px; height: 72px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  background: var(--cream);    /* fallback when no image is set */
+  background: var(--cream);
   border: 3px solid var(--green-light);
-  /*
-     IMAGE SLOT:
-     <img class="vorstand-photo" src="assets/team/vorname-nachname.jpg"
-          alt="Foto von [Name]" />
-  */
 }
 .vorstand-card h4 { font-size: 1rem; margin-bottom: .2rem; }
 .vorstand-card .role {
@@ -1152,7 +1179,10 @@ h4 { font-size: 1.1rem; }
 .epa-liste .epa-unterliste li {
   margin-bottom: 0.25rem;
 }
-
+.redirect-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
 /* Image slot inside topic content panels */
 .topic-content-img {
   border-radius: var(--radius-lg);
@@ -1479,10 +1509,10 @@ ziele.html, news.html, presseecho.html, termine.html) */
 }
 
 
-/* ── Scroll reveal ───────────────────────────────────── */
+/* Scroll reveal */
 .reveal {
   opacity: 0;
-  /*transform: translateY(24px);*/
+  transform: translateY(10px);
   transition: opacity .65s ease, transform .65s ease;
 }
 /* JS adds .is-visible (new pages) or .visible (index.html legacy) */
@@ -1542,49 +1572,41 @@ ziele.html, news.html, presseecho.html, termine.html) */
   margin-bottom: 2rem;
 }
 .section-heading--centered { text-align: center; }
-
 /* Shared button aliases (subpages use .btn--primary / .btn--outline) */
 .btn--primary { background: var(--green-dark); color: var(--white); border-color: var(--green-dark); }
 .btn--primary:hover { background: var(--green-mid); border-color: var(--green-mid); box-shadow: var(--shadow-md); }
 .btn--outline { background: transparent; color: var(--green-dark); border-color: var(--green-dark); }
 .btn--outline:hover { background: var(--green-dark); color: var(--white); }
 
-/* ── Container narrow variant ─────────────────────────── */
+/* Container narrow */
 .container--narrow {
   max-width: 780px;
 }
 
-/* ── Lead text ────────────────────────────────────────── */
+/* Vorstand */
 .lead-text {
+  text-align: center;
   font-size: 1.15rem;
   line-height: 1.75;
   color: var(--warm-gray);
   margin-bottom: 1.5rem;
   max-width: 72ch;
 }
-
-/* ── Plain list (Kassenprüfer, Satzung bullet points) ─── */
-.plain-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
+.erster-vorsitzender-section {
+  padding-block: 3rem;
 }
-.plain-list li { font-size: .95rem; padding-left: 1.25rem; position: relative; }
-.plain-list li::before {
-  content: '–';
-  position: absolute;
-  left: 0;
-  color: var(--green-mid);
-  font-weight: 700;
+.erster-vorsitzender{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 240px;
 }
-
-/* ── Board / Vorstand cards (vorstand.html) ───────────── */
-/*
-   BOARD GRID: auto-fills columns with min 240px width.
-   HOW TO ADD A MEMBER: copy an <article class="board-card"> block.
-   HOW TO REMOVE: delete the <article> block.
-*/
+.vorstand-center {
+  text-align: center;
+}
+.vorstand-center .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
 .board-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -1612,17 +1634,9 @@ ziele.html, news.html, presseecho.html, termine.html) */
   margin-bottom: 1.25rem;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  /*
-     IMAGE SLOT – once you have a photo:
-     Replace <span class="icon-slot icon-slot--person"> with:
-     <img src="assets/vorstand/name.jpg" alt="Foto [Name]" />
-     Recommended size: 200×200 px (will be cropped to circle)
-  */
 }
 .board-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-/* Placeholder icon inside empty photo slots */
 .icon-slot--person {
-  width: 44px; height: 44px;
   color: var(--green-light);
 }
 .board-card__name {
@@ -1937,13 +1951,19 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .ueber-subnav { gap: .5rem; }
   .tabs-nav { gap: .25rem; }
   .tab-btn  { font-size: .82rem; padding: .55rem .85rem; }
-  .article-flex  { flex-direction: column; align-items: center; }
+  .article-flex  { flex-direction: column; }
+  .waldspaziergang .article-flex,
+  .nisthilfen .article-flex,
+  .ziele-section .article-flex,
+  .vorstand-section .article-flex { align-items: center; }
+  .vorstand-section .article-flex { text-align: center;}
   .image-right, .image-left {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: .75rem;
     margin-top: .75rem;
   }
+  #top-zero { margin-top: 1rem; }
 }
 @media (max-width: 480px) {
   .hero-title    { font-size: 2rem; }

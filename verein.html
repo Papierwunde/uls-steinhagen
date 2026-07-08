@@ -3,147 +3,330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Der Verein ULS Steinhagen – Geschichte, Ziele und Vorstand." /><!-- EDIT -->
+  <meta name="description" content="Alles Aktuelle des ULS-Steinhagen e.V." />
   <meta name="theme-color" content="#2D5016" />
-  <title>Über uns – ULS Steinhagen</title><!-- EDIT -->
+  <title>ULS Steinhagen – Aktuelles</title>
+  <link rel="icon" type="image/png" href="assets/uls-steinhagen-logo.png">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
-  <header id="navbar" role="banner">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
-        <div class="nav-logo-icon" aria-hidden="true">
-          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
-        </div>
-        <div class="nav-logo-text">
-          <span>ULS Steinhagen</span>
-          <span>Umwelt &amp; Lebensqualität</span>
-        </div>
-      </a>
-      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
-        <a href="ueber-uns.html" aria-current="page">Über uns</a>
-        <a href="news.html">Aktuelles</a>
-        <a href="termine.html">Termine</a>
-        <a href="themen.html">Unsere Themen</a>
-        <a href="presseecho.html">Presseecho</a>
-        <a href="index.html#contact" class="nav-cta">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
   <main id="main">
-
-    <!-- Page hero -->
     <div class="page-hero">
       <div class="container">
-        <span class="section-label" style="color:var(--green-light);">Über uns</span>
-        <h1>Der Verein</h1><!-- EDIT -->
-        <p>Gegründet 1991 – aktiv für Steinhagen.</p><!-- EDIT -->
+        <span class="section-label">Über uns</span>
+        <h1>Verein</h1>
+        <p>Gegründet 2005 – aktiv für Steinhagen.</p>
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════════════
-         SUB-NAVIGATION (Über-uns sub-pages)
-         ══════════════════════════════════════════════════
-         Click any link below to visit that sub-page.
-         They each have their own content.
-    ══════════════════════════════════════════════════ -->
-    <section class="page-content bg-white" style="padding-block:2rem 0;">
+    <!--
+    <section class="page-content bg-cream">
+        <h2 class="redirect-heading">Wähle einen Bereich</h2>
+        <div class="btn-group btn-group-center">
+          <a href="ziele.html" class="btn btn--primary">Ziele</a>
+          <a href="vorstand.html" class="btn btn--outline">Vorstand</a>
+          <a href="mitgliedschaft.html" class="btn btn--outline">Mitgliedschaft</a>
+        </div>
+    </section>
+-->
+     <!-- ZIELE -->
+    <section class="section ziele-section page-content bg-white" aria-labelledby="ziele-heading" id="ziele">
       <div class="container">
-        <nav class="ueber-nav" aria-label="Über-uns-Unterseiten">
-          <a href="zum-verein.html" class="is-active">Zum Verein</a>
-          <a href="vorstand.html">Vorstand</a>
-          <a href="ziele.html">Ziele &amp; Satzung</a>
-          <a href="mitgliedschaft.html">Mitglied werden</a>
-        </nav>
+        <div class="reveal">
+          <div class="article-flex">
+            <div class="image-left">
+              <img src="assets/verein/collage-natur-copyright-gerhard-burkat-steinhagen.png" width="463" height="261" title="Collage Natur Copyright Gerald Burkat, Steinhagen" alt="Natur Collage Steinhagen" loading="lazy"/>
+            </div>            
+            <div class="article-text article-text-center">
+              
+              
+                <span class="section-label">Unsere Ziele</span>
+                <h2 class="section-title" id="news-heading">Was wir anstreben</h2>
+                <div class="divider"></div>
+                <p class="section-intro">Information aller Interessierten über Möglichkeiten für eine bessere Lebensqualität</p>
+              
+              <ul class="about-list" aria-label="Unsere Tätigkeiten">
+                <li class="about-list-item">
+                  <span class="about-list-icon" aria-hidden="true" >
+                    <span class="text-white">1</span>
+                  </span>
+                  <span>Echter Umweltschutz für Steinhagen</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-icon" aria-hidden="true">
+                    <span class="text-white">2</span>
+                  </span>
+                  <span>Ressourcenschonung / Bewahrung unserer Lebensgrundlage</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-icon" aria-hidden="true">
+                    <span class="text-white">3</span>
+                  </span>
+                  <span>Bessere Wohnqualität (Lärm, Feinstaub + weitere Faktoren)</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-icon" aria-hidden="true">
+                    <span class="text-white">4</span>
+                  </span>
+                  <span>Erhaltung von Flora, Fauna, Landschaft und Naherholungsbereichen</span>
+                </li>
+              </ul>
+              <h3>Aussterben von Tier- und Pflanzarten in beängstigendem Ausmaß</h3>
+              <p>
+                Denn naturnahe Wiesen, Wälder, Feuchtwiesen, Sümpfe, Moore und Gewässer sind weitgehend 
+                verschwunden. Die Zersiedelung unserer Landschaft tut ein Übriges dazu. Durch Eintrag 
+                von Stickstoff und anderen Chemikalien verarmt die Artenvielfalt der verbliebenen Flächen.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- ══════════════════════════════════════════════════
-         CONTENT – redirect message
-    ══════════════════════════════════════════════════ -->
-    <section class="page-content bg-white" aria-labelledby="redirect-heading">
-      <div class="container container--narrow" style="text-align:center;padding:4rem 0;">
-        <h2 id="redirect-heading">Wähle einen Bereich</h2>
-        <p style="margin-top:1rem;margin-bottom:2rem;">
-          Bitte nutze die Navigation oben, um zu den Inhalten zu gelangen:
-        </p>
-        <div class="btn-group btn-group-center">
-          <a href="zum-verein.html" class="btn btn--primary">Zum Verein</a>
-          <a href="vorstand.html" class="btn btn--outline">Vorstand</a>
-          <a href="ziele.html" class="btn btn--outline">Ziele &amp; Satzung</a>
-          <a href="mitgliedschaft.html" class="btn btn--outline">Mitglied werden</a>
+    
+    <section class="erster-vorsitzender-section reveal" id="vorstand">
+      <div class="container">
+        <div class="vorstand-center">
+          <span class="section-label">ULS - Steinhagen</span>
+          <h2 class="section-title">Der Vorstand</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="container container--narrow">
+          <p class="lead-text">
+            Der Vorstand des ULS Steinhagen e.V. besteht aus ehrenamtlichen Mitgliedern, die sich
+            für die Ziele des Vereins einsetzen. Hier stellen wir uns vor.
+          </p>
+        </div>
+        
+        <div class="container">
+          <article class="board-card erster-vorsitzender">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/sabineWienstroeer.jpg" alt="Sabine Wiebstöer"/>
+              </span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Sabine Wienströer</h2>
+              <p class="board-card__role">1. Vorsitzende</p>
+              <p class="board-card__bio">
+                Tel.: 05204-6107
+              </p>
+              <a href="umweltverein@uls-steinhagen.de" class="board-card__email">umweltverein@uls-steinhagen.de</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <section class="section section--flush-top reveal">
+      <div class="container">
+        <div class="board-grid">
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/rebekkaKlein.jpg" alt="Rebekka Klein"/>
+              </span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Rebekka Klein</h2>
+              <p class="board-card__role">2. Vorsitzende/r</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/1.jpg" alt="Friederike Generotzky"/></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Friederike Generotzky</h2>
+              <p class="board-card__role">Kassenwartin</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/2.jpg" alt="Stephanie Brekenkamp"/></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Stephanie Brekenkamp</h2>
+              <p class="board-card__role">Schriftführerin</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/3.jpg" alt="Traute Jäckel"/></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Traute Jäckel</h2>
+              <p class="board-card__role">Beisitzerin</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/4.jpg" alt="Annette Lechthoff"/></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Annette Lechthoff</h2>
+              <p class="board-card__role">Beisitzerin</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/5.jpg" alt="Sylvin Schmidt"/></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Sylvin Schmidt</h2>
+              <p class="board-card__role">Beisitzerin</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/peterGenerotzky.jpg" alt="Peter Generotzky"/>
+              </span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Peter Generotzky</h2>
+              <p class="board-card__role">Beisitzer</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+          
+          <article class="board-card reveal">
+            <div class="board-card__photo">
+              <span class="icon-slot--person" aria-hidden="true">
+                <img src="assets/vorstand/rainardWienstroeer.jpg" alt="Rainard Wiebstöer"/>
+              </span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Rainard Wienströer</h2>
+              <p class="board-card__role">Beisitzer</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>   
+    <!--
+    <section class="section vorstand-section page-content bg-cream" aria-labelledby="vorstand-heading">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">ULS - Steinhagen</span>
+          <h2 class="section-title">Der Vorstand</h2>
+          <div class="divider"></div>
+        
+
+          <div class="article-flex">
+            <div class="image-left">
+              <img src="assets/ueber_uns/vorstand.png" width="759" height="570" alt="Der Vorstand" loading="lazy"/>
+
+            </div>            
+            <div class="article-text">
+              <h3 id="top-zero">1. Vorsitzende</h3>
+              <p>
+                Sabine Wienströer<br/>
+                05204-6107<br/>
+                umweltverein@uls-steinhagen.de<br/>
+              </p>
+              <h3>2. Vorsitzende</h3>
+              <p>
+                Rebekka Klein
+              </p>
+              <h3>Kassenwartin</h3>
+              <p>
+                Friederike Generotzky
+              </p>
+              <h3>Schriftführerin</h3>
+              <p>
+                Stephanie Brekenkamp
+              </p>
+              <h3>Beisitzer*innen</h3>
+              <p>
+                Traute Jäckel<br/>
+                Annette Lechthoff<br/>
+                Sylvin Schmidt<br/>
+                Peter Generotzky<br/>
+                Rainard Wienströer
+              </p><br/>
+              <a href="vorstand.html" class="btn btn-primary">Vorstand</a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+
+    <section class="section mitglied-section page-content bg-white" aria-labelledby="mitglied-heading" id="mitglied">
+      <div class="container">
+        <div class="about-grid">
+          
+          <div class="reveal">
+            <span class="section-label">Mitgliedschaft</span>
+            <h2 class="section-title" id="news-heading">Sie möchten Mitglied werden?</h2>
+            <div class="divider"></div>
+            <p>
+              Wenn Sie sich mit unseren Zielen für Steinhagen identifizieren können 
+              und uns bei unseren Aktivitäten unterstützen wollen, dann sind Sie herzlich willkommen!
+            </p>
+            <p>
+              Unser Jahresbeitrag beträgt aktuell ab 24 €. Da  der Verein als gemeinnützig anerkannt ist, 
+              können Beiträge (auch über den Mindestbeitrag hinaus) steuerlich geltend gemacht werden.
+            </p>
+            <p>
+              Unseren Flyer mit  Beitrittsformular habe wir hier zum Download 
+              für Sie bereitgestellt. In gedruckter Form erhalten Sie das Formblatt auch bei den Mitgliedern des Vorstands 
+              (siehe Kontakt) oder im Schulsekretariat.
+            </p>
+            <p>
+              Vielleicht schauen Sie vorher einmal in unsere Satzung, denn die erkennen Sie mit Ihrer 
+              Beitrittserklärung an.
+            </p>
+            <a href="pdfs/Satzung-fuer-Internet.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+              Satzung
+            </a>
+            <a href="pdfs/Flyer-Herzlichwillkommen,-Baum-mit-Moos-26.10.2020.-1-.pdf" target="_blank" class="btn btn-outline">
+              Beitrittsformular
+            </a>
+          </div>
+
+          <div class="about-image-wrap reveal">
+            <img src="assets/verein/rotkehlchen.png" width="463" height="358" alt="Rotkehlchen" title="Copyright Detlef Lippek" loading="lazy"/>
+          </div> 
+
+        </div>
+      </div>
+    </section>
+
+     <!-- Back-Button -->
+    <section class="page-content bg-cream reveal">
+      <div class="container image-center">
+        <a href="index.html" class="btn btn-outline">Zurück zum Start</a>
+      </div>
+    </section>
   </main>
 
-  <!-- ══ FOOTER ══════════════════════════════════════════ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
-            <div class="nav-logo-icon" aria-hidden="true">
-              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
-            </div>
-            <div class="nav-logo-text" style="color:white;">
-              <span>ULS Steinhagen</span>
-              <span>Umwelt &amp; Lebensqualität</span>
-            </div>
-          </a>
-          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="news.html">Aktuelles</a></li>
-            <li><a href="termine.html">Termine</a></li>
-            <li><a href="themen.html">Unsere Themen</a></li>
-            <li><a href="presseecho.html">Presseecho</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Über uns</h5>
-          <ul>
-            <li><a href="ueber-uns.html">Zum Verein</a></li>
-            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
-            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
-            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Kontakt</h5>
-          <ul>
-            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
-            <li><a href="tel:+4952048911">05204 89118</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
-        <div style="display:flex;gap:1.25rem;">
-          <a href="impressum.html">Impressum</a>
-          <a href="impressum.html#datenschutz">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" aria-label="Zurück nach oben">
-    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
-  </button>
-
-  <script src="js/main.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>
