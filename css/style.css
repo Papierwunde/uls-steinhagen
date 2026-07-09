@@ -391,7 +391,7 @@ h4 { font-size: 1.1rem; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/backgrounds/baum.jpg');
+  background-image: url('../assets/backgrounds/pexels-photo-235615.jpeg');
   filter: blur(4px);
   background-size: cover;
   background-position: center;
@@ -966,7 +966,7 @@ h4 { font-size: 1.1rem; }
 /* Themen */
 .tabs-wrapper a { color: var(--green-mid); }
 .tabs-wrapper a:hover{ color:var(--green-light); }
-.topic-content .image-center {
+.topic-content {
   margin: auto;
 }
 /* Strahlenbelasung */
@@ -997,6 +997,9 @@ h4 { font-size: 1.1rem; }
 }
 
 /* Glyphosat */
+.glyphosat-links {
+  text-align: center;
+}
 .themen-image-container {
   position: relative;
   display: inline-block;
@@ -1015,7 +1018,12 @@ h4 { font-size: 1.1rem; }
   padding: 10px;
   box-sizing: border-box;
 }
-
+.themen-glyphosat-img-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
 /* Verein */
 .ziele-section h3 { 
@@ -1048,6 +1056,7 @@ h4 { font-size: 1.1rem; }
   margin-top: 0;
 }
 .image-center {
+  margin: auto;
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
@@ -2015,6 +2024,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .vorstand-section .article-flex { align-items: center; }
   .vorstand-section .article-flex { text-align: center;}
   .image-right, .image-left {
+    display: flex;
+    justify-content: center;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: .75rem;
@@ -2047,6 +2058,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .grenzwert-tabelle .einheit {
     padding-left: 5px;
   }
+
 }
 @media (max-width: 480px) {
   .hero-title    { font-size: 2rem; }
@@ -2054,4 +2066,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
   .vorstand-grid { grid-template-columns: 1fr; }
   .board-grid    { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+  }
 }
