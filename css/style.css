@@ -963,39 +963,62 @@ h4 { font-size: 1.1rem; }
 }
 .topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
 .topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
-/* Themen */
+/* THEMEN */
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  border-bottom: 2px solid rgba(45,80,22,.12);
+  margin-bottom: 3rem;
+}
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.25rem;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--warm-gray);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--transition), border-color var(--transition);
+}
+.tab-btn .icon-slot {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+.tab-btn:hover { color: var(--green-dark); }
+.tab-btn.is-active {
+  color: var(--green-dark);
+  border-bottom-color: var(--green-dark);
+}
+.tab-panel { 
+  display: none;
+}
+.topic-content {
+  margin-bottom: 3rem;
+}
+.tab-panel.is-active { display: block; }
+.topic-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.topic-content-text h3 { margin-bottom: 1rem; }
+.topic-content-text p  { margin-bottom: 1rem; }
+.topic-content-text ul { margin-bottom: 1rem; padding-left: 1.25rem; list-style: disc; }
+.topic-content-text ul li { margin-bottom: .4rem; font-size: .95rem; }
 .tabs-wrapper a { color: var(--green-mid); }
 .tabs-wrapper a:hover{ color:var(--green-light); }
 .topic-content {
   margin: auto;
 }
-/* Strahlenbelasung */
-#strahlenbelastung, #glyphosat {
-  scroll-margin-top: 80px;
-}
-.themen-section-top {
-  border-bottom: 2px solid rgba(45,80,22,.12);
-  margin-bottom: 3rem;
-}
-.grenzwert-titel {
-  margin-bottom: 10px;
-}
-.grenzwert-tabelle {
-  border-collapse: collapse;
-  font-size: .99rem;
-}
-.grenzwert-tabelle .land {
-  font-weight: bold;
-  padding-right: 10px;
-}
-.grenzwert-tabelle .wert {
-  text-align: right;
-  padding-right: 10px;
-}
-.grenzwert-tabelle .einheit {
-  padding-right: 10px;
-}
-
 /* Glyphosat */
 .glyphosat-links {
   text-align: center;
@@ -1023,6 +1046,61 @@ h4 { font-size: 1.1rem; }
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+/* GIB */
+#gib p, #strahlenbelastung p{
+  text-align: justify;
+  hyphens: auto;
+}
+#gib .container--narrow {
+  margin: auto;
+}
+/* Flora & Fauna */
+#flora-fauna {
+  margin: auto;
+  text-align: justify;
+}
+#flora-fauna .text-center {
+    text-align: center;
+}
+.flora-fauna-img {
+  margin: auto;
+  border-radius: var(--radius-lg);
+  aspect-ratio: auto;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  background: var(--cream);
+  margin-bottom: 1rem;
+}
+/* Bäume für Steinhagen */
+.baume .topic-content-img {
+  margin-bottom: 1.5rem;
+}
+/* Strahlenbelasung */
+#strahlenbelastung, #glyphosat {
+  scroll-margin-top: 80px;
+}
+.themen-section-top {
+  border-bottom: 2px solid rgba(45,80,22,.12);
+  margin-bottom: 3rem;
+}
+.grenzwert-titel {
+  margin-bottom: 10px;
+}
+.grenzwert-tabelle {
+  border-collapse: collapse;
+  font-size: .99rem;
+}
+.grenzwert-tabelle .land {
+  font-weight: bold;
+  padding-right: 10px;
+}
+.grenzwert-tabelle .wert {
+  text-align: right;
+  padding-right: 10px;
+}
+.grenzwert-tabelle .einheit {
+  padding-right: 10px;
 }
 
 /* Verein */
@@ -1171,61 +1249,6 @@ h4 { font-size: 1.1rem; }
 .vorstand-card p { font-size: .85rem; max-width: none; }
 
 
-/* ── THEMEN TABS (themen.html) ───────────────────────── */
-.tabs-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  border-bottom: 2px solid rgba(45,80,22,.12);
-  margin-bottom: 3rem;
-}
-.tab-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .65rem 1.25rem;
-  border: none;
-  background: transparent;
-  font-family: var(--font-body);
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--warm-gray);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;         /* sits on the border line */
-  transition: color var(--transition), border-color var(--transition);
-}
-/* Icon slot inside tab buttons */
-.tab-btn .icon-slot {
-  width: 16px; height: 16px;
-  flex-shrink: 0;
-  color: currentColor;
-}
-.tab-btn:hover { color: var(--green-dark); }
-.tab-btn.is-active {
-  color: var(--green-dark);
-  border-bottom-color: var(--green-dark);
-}
-.tab-panel { 
-  display: none;
-}
-
-.topic-content {
-  margin-bottom: 3rem;
-}
-.tab-panel.is-active { display: block; }
-
-/* Rich content block inside a tab panel */
-.topic-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-items: start;
-}
-.topic-content-text h3 { margin-bottom: 1rem; }
-.topic-content-text p  { margin-bottom: 1rem; }
-.topic-content-text ul { margin-bottom: 1rem; padding-left: 1.25rem; list-style: disc; }
-.topic-content-text ul li { margin-bottom: .4rem; font-size: .95rem; }
 
 /* Liste in sub-page aktuelles-epa */
 .epa-liste {
