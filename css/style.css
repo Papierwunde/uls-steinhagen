@@ -88,8 +88,14 @@ ul { list-style: none; }
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1, h2 {
   font-family: var(--font-heading);
+  color: var(--green-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+h4, h3{
+  font-family: var(--font-body);
   color: var(--green-dark);
   line-height: 1.2;
   font-weight: 700;
@@ -1102,9 +1108,10 @@ h4 { font-size: 1.1rem; }
   margin-bottom: 1rem;
 }
 .weihnachtsbrief-text {
-  font-family: var(--font-heading);
-  color: #2D5016;
-  font-size: large;
+  font-family: var(--font-body);
+  color: var(--green-dark);
+  line-height: 1.2;
+  font-weight: 700;
   margin-top: 1rem;
   margin-bottom: .5rem;
   display: block;
@@ -1112,6 +1119,13 @@ h4 { font-size: 1.1rem; }
 /* Bäume für Steinhagen */
 .baume .topic-content-img {
   margin-bottom: 1.5rem;
+}
+/* Feinstaub */
+#feinstaub .text-center {
+  text-align: center;
+}
+#feinstaub li {
+  list-style-type: decimal;
 }
 /* Strahlenbelasung */
 #strahlenbelastung, #glyphosat {
@@ -1878,7 +1892,6 @@ ziele.html, news.html, presseecho.html, termine.html) */
   margin-bottom: 1em;
   text-align: justify;
   hyphens: auto;
-  lang: de;
 }
 .article-body h3 {
   margin-bottom: 1em;
