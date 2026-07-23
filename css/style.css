@@ -1019,6 +1019,9 @@ h4 { font-size: 1.1rem; }
 .topic-content {
   margin: auto;
 }
+.text-small {
+  font-size: small;
+}
 /* Glyphosat */
 .glyphosat-links {
   text-align: center;
@@ -1065,12 +1068,46 @@ h4 { font-size: 1.1rem; }
 }
 .flora-fauna-img {
   margin: auto;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   aspect-ratio: auto;
   object-fit: cover;
   box-shadow: var(--shadow-md);
   background: var(--cream);
   margin-bottom: 1rem;
+}
+/* Gewerbepark */
+#gewerbepark .text-center {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#gewerbepark {
+  margin: auto;
+  text-align: justify;
+}
+.gewerbepark-img {
+  margin: auto;
+  border-radius: var(--radius-sm);
+  aspect-ratio: auto;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  background: var(--cream);
+  margin-bottom: 1rem;
+}
+.weihnachtsbrief .gewerbepark-img {
+  display: inline;
+  margin-bottom: 0;
+}
+.weihnachtsbrief {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.weihnachtsbrief-text {
+  font-family: var(--font-heading);
+  color: #2D5016;
+  font-size: large;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  display: block;
 }
 /* Bäume für Steinhagen */
 .baume .topic-content-img {
