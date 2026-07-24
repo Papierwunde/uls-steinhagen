@@ -102,6 +102,7 @@ function initMobileNavigation() {
     }
   });
 }
+/* Presseecho */
 
 /* ── Hero background zoom-in on load ──────────────────────────── */
 (function () {

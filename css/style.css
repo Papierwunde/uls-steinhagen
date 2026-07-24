@@ -397,7 +397,7 @@ h4 { font-size: 1.1rem; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/backgrounds/pexels-photo-235615.jpeg');
+  background-image: url('../assets/backgrounds/pexels-photo-235615-small.webp');
   filter: blur(4px);
   background-size: cover;
   background-position: center;
@@ -688,8 +688,7 @@ h4 { font-size: 1.1rem; }
   width:12px; height:12px;
 }
 
-
-/* ── NEWS section (homepage preview) ─────────────────── */
+/* Aktuelles (Homepage) */
 #news { background: var(--cream); }
 .news-grid {
   display: grid;
@@ -709,10 +708,7 @@ h4 { font-size: 1.1rem; }
   box-shadow: var(--shadow-md);
 }
 .news-card-img {
-  width: 100%;/*
-  aspect-ratio: auto;
-  height: 200px;*/
-  
+  width: 100%;
   object-fit: cover;
 }
 .news-card-body { padding: 1.5rem; }
@@ -747,17 +743,14 @@ h4 { font-size: 1.1rem; }
   font-size: .8rem;
   opacity: 0.6;
   filter: brightness(0) saturate(100%) invert(35%) sepia(7%) saturate(469%) hue-rotate(22deg) brightness(95%) contrast(90%);
-  /*color: rgba(90,90,82,.6);*/
 }
-/* Icon slot for news meta row (calendar, book, etc.) */
 .news-card-meta .icon-slot {
   width: 14px; height: 14px;
   color: rgba(90,90,82,.6);
   flex-shrink: 0;
 }
 
-
-/* ── EVENTS section (homepage preview) ───────────────── */
+/* Termine (Homepage) */
 #events { background: var(--white); }
 .events-layout {
   display: grid;
@@ -830,7 +823,7 @@ h4 { font-size: 1.1rem; }
   /*color: var(--green-mid);*/
 }
 
-/* Sticky highlight card */
+/* Termine Sticky highlight card */
 .next-event-card {
   background: var(--green-dark);
   border-radius: var(--radius-lg);
@@ -921,55 +914,7 @@ h4 { font-size: 1.1rem; }
   color: var(--white);
 }
 
-
-/* ── TOPICS (homepage preview + themen.html) ─────────── */
-#topics { background: var(--cream); }
-.topics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-.topic-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 2rem;
-  border: 1px solid rgba(45,80,22,.08);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-}
-.topic-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--green-light);
-}
-/* Icon slot for topic cards */
-.topic-icon {
-  width: 52px; height: 52px;
-  background: rgba(74,124,47,.1);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.25rem;
-  transition: background var(--transition);
-  overflow: hidden;
-}
-.topic-card:hover .topic-icon { background: var(--green-dark); }
-.topic-icon .icon-slot {
-  width: 26px; height: 26px;
-  /*transform: translateX(-50px);
-  filter: drop-shadow(50px 0 0 var(--green-dark));*/
-  object-fit: contain;
-  transition: color var(--transition);
-  filter: brightness(0) saturate(100%) invert(25%) sepia(16%) saturate(2183%) hue-rotate(53deg) brightness(89%) contrast(86%);
-
-}
-.topic-card:hover .topic-icon .icon-slot {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(103%);
-}
-.topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
-.topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
-/* THEMEN */
+/* Themen */
 .tabs-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1028,7 +973,63 @@ h4 { font-size: 1.1rem; }
 .text-small {
   font-size: small;
 }
+
+/* Themen sub page */
+#topics { background: var(--cream); }
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.topic-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid rgba(45,80,22,.08);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-light);
+}
+/* Icon slot für topic cards */
+.topic-icon {
+  width: 52px; height: 52px;
+  background: rgba(74,124,47,.1);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: background var(--transition);
+  overflow: hidden;
+}
+.topic-card:hover .topic-icon { background: var(--green-dark); }
+.topic-icon .icon-slot {
+  width: 26px; height: 26px;
+  /*transform: translateX(-50px);
+  filter: drop-shadow(50px 0 0 var(--green-dark));*/
+  object-fit: contain;
+  transition: color var(--transition);
+  filter: brightness(0) saturate(100%) invert(25%) sepia(16%) saturate(2183%) hue-rotate(53deg) brightness(89%) contrast(86%);
+
+}
+.topic-card:hover .topic-icon .icon-slot {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(103%);
+}
+.topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
+.topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
+.links-small-text { text-align: left; }
 /* Glyphosat */
+#glyphosat .topic-content {
+  gap: 5rem;
+}
+#glyphosat .topic-content-text p {
+  text-align: justify;
+  hyphens: auto;
+}
 .glyphosat-links {
   text-align: center;
 }
@@ -1056,18 +1057,21 @@ h4 { font-size: 1.1rem; }
   align-items: center;
   gap: 2rem;
 }
+
 /* GIB */
-#gib p, #strahlenbelastung p{
+#gib {
   text-align: justify;
   hyphens: auto;
 }
 #gib .container--narrow {
   margin: auto;
 }
+
 /* Flora & Fauna */
 #flora-fauna {
   margin: auto;
   text-align: justify;
+  hyphens: auto;
 }
 #flora-fauna .text-center {
     text-align: center;
@@ -1081,6 +1085,7 @@ h4 { font-size: 1.1rem; }
   background: var(--cream);
   margin-bottom: 1rem;
 }
+
 /* Gewerbepark */
 #gewerbepark .text-center {
     text-align: center;
@@ -1089,6 +1094,7 @@ h4 { font-size: 1.1rem; }
 #gewerbepark {
   margin: auto;
   text-align: justify;
+  hyphens: auto;
 }
 .gewerbepark-img {
   margin: auto;
@@ -1116,18 +1122,33 @@ h4 { font-size: 1.1rem; }
   margin-bottom: .5rem;
   display: block;
 }
+
 /* Bäume für Steinhagen */
 .baume .topic-content-img {
   margin-bottom: 1.5rem;
 }
+#baume {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* Feinstaub */
 #feinstaub .text-center {
   text-align: center;
 }
+#feinstaub {
+  text-align: justify;
+  hyphens: auto;
+}
 #feinstaub li {
   list-style-type: decimal;
 }
+
 /* Strahlenbelasung */
+#strahlenbelastung {
+  text-align: justify;
+  hyphens: auto;
+}
 #strahlenbelastung, #glyphosat {
   scroll-margin-top: 80px;
 }
@@ -1203,7 +1224,8 @@ h4 { font-size: 1.1rem; }
 .image-left img, .image-right img, .image-center img {
   border-radius: var(--radius-lg);
 }
-/* PRESSEECHO (gallery page) */
+
+/* Presseecho */
 #presseecho { background: var(--white); }
 .press-grid {
   display: grid;
@@ -1244,31 +1266,6 @@ h4 { font-size: 1.1rem; }
 }
 .press-card-date { font-size: .82rem; color: var(--warm-gray); }
 
-
-/* ── ÜBER UNS (ueber-uns.html) ───────────────────────── 
-.ueber-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  margin-bottom: 3rem;
-}
-.ueber-nav a {
-  display: inline-block;
-  padding: .5rem 1.25rem;
-  border: 1.5px solid var(--green-mid);
-  border-radius: 999px;
-  font-size: .88rem;
-  font-weight: 600;
-  color: var(--green-mid);
-  transition: background var(--transition), color var(--transition);
-}
-.ueber-nav a:hover,
-.ueber-nav a.active {
-  background: var(--green-dark);
-  color: var(--white);
-  border-color: var(--green-dark);
-}
-*/
 /* Vorstand */
 .vorstand-grid {
   display: grid;
@@ -2034,6 +2031,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
     top: auto;
   }
   .topic-content-img { margin: auto; }
+  #glyphosat .topic-content { gap: 1rem; }
 }
 
 @media (max-width: 768px) {
