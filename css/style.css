@@ -386,7 +386,7 @@ h4 { font-size: 1.1rem; }
 .nav-toggle.is-active span:nth-child(3),
 .nav-toggle.is-active .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── HERO ─────────────────────────────────────────────── */
+/* HERO */
 #hero {
   position: relative;
   min-height: 100svh;
@@ -1014,14 +1014,20 @@ h4 { font-size: 1.1rem; }
   object-fit: contain;
   transition: color var(--transition);
   filter: brightness(0) saturate(100%) invert(25%) sepia(16%) saturate(2183%) hue-rotate(53deg) brightness(89%) contrast(86%);
-
 }
 .topic-card:hover .topic-icon .icon-slot {
   filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(103%);
 }
 .topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
 .topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
+
+/* Text Highlights */
 .links-small-text { text-align: left; }
+.highlight-green {
+  color: #2D5016;
+  font-weight: bold;
+}
+
 /* Glyphosat */
 #glyphosat .topic-content {
   gap: 5rem;
@@ -1105,11 +1111,11 @@ h4 { font-size: 1.1rem; }
   background: var(--cream);
   margin-bottom: 1rem;
 }
-.weihnachtsbrief .gewerbepark-img {
+.img-unterschrift .gewerbepark-img {
   display: inline;
   margin-bottom: 0;
 }
-.weihnachtsbrief {
+.img-unterschrift {
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -1137,11 +1143,47 @@ h4 { font-size: 1.1rem; }
   text-align: center;
 }
 #feinstaub {
+  margin: auto;
   text-align: justify;
   hyphens: auto;
 }
 #feinstaub li {
   list-style-type: decimal;
+}
+
+/* Hochwasserschutz */
+#hochwasserschutz .text-center {
+  text-align: center;
+}
+#hochwasserschutz {
+  margin: auto;
+  text-align: justify;
+  hyphens: auto;
+}
+.hochwasser-img {
+  margin: auto;
+  border-radius: var(--radius-sm);
+  aspect-ratio: auto;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  background: var(--cream);
+  margin-bottom: 1rem;
+}
+.center-img-link {
+  display: flex;
+  justify-content: center;
+}
+.center-img-link a {
+  display: block;
+  line-height: 0;
+}
+.hochwasser-imgs {
+  display: grid;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.hochwasser-imgs img {
+  margin-bottom: 0;
 }
 
 /* Strahlenbelasung */
@@ -1173,6 +1215,26 @@ h4 { font-size: 1.1rem; }
 }
 .grenzwert-tabelle .einheit {
   padding-right: 10px;
+}
+/* Lärmschutz */
+.laermschutz-img {
+  margin: auto;
+  border-radius: var(--radius-sm);
+  aspect-ratio: auto;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  background: var(--cream);
+  margin-bottom: 1rem;
+}
+#laermschutz .text-center {
+  text-align: center;
+}
+#laermschutz {
+  text-align: justify;
+  hyphens: auto;
+}
+#laermschutz .container--narrow {
+  margin: auto;
 }
 
 /* Verein */
