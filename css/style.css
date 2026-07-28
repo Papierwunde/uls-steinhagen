@@ -1284,7 +1284,7 @@ h4 { font-size: 1.1rem; }
   margin-bottom: .75rem;
 }
 .image-left img, .image-right img, .image-center img {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
 }
 
 /* Presseecho */
@@ -1357,8 +1357,6 @@ h4 { font-size: 1.1rem; }
   margin-bottom: .5rem;
 }
 .vorstand-card p { font-size: .85rem; max-width: none; }
-
-
 
 /* Liste in sub-page aktuelles-epa */
 .epa-liste {
@@ -1658,8 +1656,25 @@ ziele.html, news.html, presseecho.html, termine.html) */
 .page-content.bg-white { background: var(--white); }
 .page-content.bg-cream { background: var(--cream); }
 
+/* Aktuelles/News */
 
-/* ── TIMELINE (termine.html) ─────────────────────────── */
+/* Phasenschieber */
+.phasenschieber li {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+.phasenschieber ul {
+  margin-bottom: 1rem;
+}
+
+/* Lärmaktionsplan */
+.laermaktionsplan li {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  hyphens: auto;
+}
+/* Termine */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -1963,6 +1978,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   padding-inline: 0;
 }
 /* Datenschutz/Impressum */
+.legal-section li { margin-bottom: .75rem; }
 .legal-section { padding-block: 4rem; }
 .legal-section a, .contact-layout a { color: var(--green-mid); }
 .legal-section a:hover , .contact-layout a:hover { color:var(--green-light); }
@@ -1975,6 +1991,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
   margin-top: 4rem;
 }
 #haftungsausschluss-heading { margin-top: 4rem; }
+#bildnachweise-heading { margin-top: 4rem; }
+
 /* ── Download block (mitgliedschaft.html) ─────────────── */
 .download-block {
   display: flex;
@@ -2053,9 +2071,16 @@ ziele.html, news.html, presseecho.html, termine.html) */
 .tabs-wrapper { width: 100%; }
 .tabs-panels  { width: 100%; }
 
+/* Ziele */
+.mitgliederpost {
+  justify-content: center;
+  margin-top: 2rem;
+}
+.image-ziele img {
+  border-radius: var(--radius-sm);
+}
 
-
-/* ── Ziele / content blocks (ziele.html) ──────────────── */
+/* Ziele */
 .content-block {
   margin-bottom: 3rem;
 }
@@ -2094,6 +2119,9 @@ ziele.html, news.html, presseecho.html, termine.html) */
   }
   .topic-content-img { margin: auto; }
   #glyphosat .topic-content { gap: 1rem; }
+  .article-flex {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
