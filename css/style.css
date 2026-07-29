@@ -1394,8 +1394,28 @@ h4 { font-size: 1.1rem; }
   */
 }
 
+/* image zoom */
+.zoom-box {
+  width: 100%;
+  overflow: auto;    /* Ermöglicht Scrollen, wenn reingezoomt ist */
+  text-align: center;
+}
 
-/* ── CONTACT ─────────────────────────────────────────── */
+.zoom-box img {
+  width: 100%;       /* Standardmäßig so groß wie die Section */
+  height: auto;
+  cursor: zoom-in;
+  transition: transform 0.2s ease; /* Nutzt transform für flüssigere Animationen */
+}
+
+/* Diese Klasse wird nun korrekt per Klick aktiviert */
+.zoom-box img.is-zoomed {
+  width: 250% !important; /* Erzwingt die 2.5-fache Breite für extrem feine Schrift */
+  max-width: none;
+  cursor: zoom-out;
+}
+
+/* CONTACT */
 #contact {
   background: var(--cream);/*
   transform: translateZ(0); 

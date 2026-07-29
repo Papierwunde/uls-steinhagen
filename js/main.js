@@ -63,6 +63,11 @@ function initStickyHeader() {
   onScroll(); /* run once on load */
 }
 
+/* Zoom */
+function toggleZoom(image) {
+  image.classList.toggle("is-zoomed");
+}
+
 /* ── Mobile navigation toggle ─────────────────────────────────── */
 function initMobileNavigation() {
   const toggle = document.getElementById("nav-toggle");
