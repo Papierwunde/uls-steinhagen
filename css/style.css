@@ -1395,24 +1395,30 @@ h4 { font-size: 1.1rem; }
 }
 
 /* image zoom */
-.zoom-box {
-  width: 100%;
-  overflow: auto;    /* Ermöglicht Scrollen, wenn reingezoomt ist */
-  text-align: center;
+#imageOverlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    overflow: auto;          /* <-- wichtig */
+    background: rgba(0,0,0,.85);
+    z-index: 9999;
+    cursor: zoom-out;
+    text-align: center;
 }
 
-.zoom-box img {
-  width: 100%;       /* Standardmäßig so groß wie die Section */
-  height: auto;
-  cursor: zoom-in;
-  transition: transform 0.2s ease; /* Nutzt transform für flüssigere Animationen */
+#imageOverlay.show {
+    display: block;
 }
 
-/* Diese Klasse wird nun korrekt per Klick aktiviert */
-.zoom-box img.is-zoomed {
-  width: 250% !important; /* Erzwingt die 2.5-fache Breite für extrem feine Schrift */
-  max-width: none;
-  cursor: zoom-out;
+#imageOverlay img {
+    display: block;
+    margin: 20px auto;
+    max-width: 95vw;
+    height: auto;
+}
+
+#imageOverlay.show img {
+    transform: scale(2.5);
 }
 
 /* CONTACT */

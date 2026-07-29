@@ -40,16 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
             initStickyHeader();
             initMobileNavigation();
             backToTop();
+            //initZoomBild();
         })
         .catch(error => console.error("Fehler beim Laden der Website-Komponenten:", error));
 });
 
-/* ── Auto-update footer year ──────────────────────────────────── */
+/* ── Auto-update footer year ──────────────────────────────────── 
 (function () {
   const el = document.getElementById("footer-year");
   if (el) el.textContent = new Date().getFullYear();
 })();
-
+*/
 
 /* ── Sticky header: add .scrolled class on scroll ─────────────── */
 function initStickyHeader() {
@@ -64,9 +65,20 @@ function initStickyHeader() {
 }
 
 /* Zoom */
-function toggleZoom(image) {
-  image.classList.toggle("is-zoomed");
-}
+const overlay = document.getElementById("imageOverlay");
+const overlayImg = overlay.querySelector("img");
+
+document.querySelectorAll(".zoom-box img").forEach(img => {
+    img.addEventListener("click", () => {
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt;
+        overlay.classList.add("show");
+    });
+});
+
+overlay.addEventListener("click", () => {
+    overlay.classList.remove("show");
+});
 
 /* ── Mobile navigation toggle ─────────────────────────────────── */
 function initMobileNavigation() {
