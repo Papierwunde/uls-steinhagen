@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             initStickyHeader();
             initMobileNavigation();
             backToTop();
-            //initZoomBild();
+            initZoomBild();
         })
         .catch(error => console.error("Fehler beim Laden der Website-Komponenten:", error));
 });
@@ -65,20 +65,23 @@ function initStickyHeader() {
 }
 
 /* Zoom */
-const overlay = document.getElementById("imageOverlay");
-const overlayImg = overlay.querySelector("img");
+function initZoomBild(){
+  const overlay = document.getElementById("imageOverlay");
+  const overlayImg = overlay.querySelector("img");
 
-document.querySelectorAll(".zoom-box img").forEach(img => {
-    img.addEventListener("click", () => {
-        overlayImg.src = img.src;
-        overlayImg.alt = img.alt;
-        overlay.classList.add("show");
-    });
-});
+  document.querySelectorAll(".zoom-box img").forEach(img => {
+      img.addEventListener("click", () => {
+          overlayImg.src = img.src;
+          overlayImg.alt = img.alt;
+          overlay.classList.add("show");
+      });
+  });
 
-overlay.addEventListener("click", () => {
-    overlay.classList.remove("show");
-});
+  overlay.addEventListener("click", () => {
+      overlay.classList.remove("show");
+  });
+}
+
 
 /* ── Mobile navigation toggle ─────────────────────────────────── */
 function initMobileNavigation() {
