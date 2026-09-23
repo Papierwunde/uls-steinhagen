@@ -804,6 +804,7 @@ h4 { font-size: 1.1rem; }
   gap: .75rem;
   margin-top: .5rem;
 }
+
 .event-tag {
   display: inline-flex;
   align-items: center;
@@ -814,6 +815,7 @@ h4 { font-size: 1.1rem; }
   background: rgba(74,124,47,.1);
   padding: .2rem .6rem;
   border-radius: 999px;
+  margin-top: .4rem;
 }
 /* Icon slot inside event tags */
 .event-tag .icon-slot {
@@ -821,6 +823,22 @@ h4 { font-size: 1.1rem; }
   /* width: 11px; height: 11px; */
   filter: brightness(0) saturate(100%) invert(57%) sepia(24%) saturate(6137%) hue-rotate(64deg) brightness(66%) contrast(63%);
   /*color: var(--green-mid);*/
+}
+.sticky-card .icon-slot {
+  width: 20px; height: 20px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(103%);
+}
+.sticky-card {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(253, 255, 252, 0.1);
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  margin-bottom: .75rem;
 }
 
 /* Termine Sticky highlight card */
@@ -902,7 +920,12 @@ h4 { font-size: 1.1rem; }
   color: var(--white);
   margin-bottom: .75rem;
 }
-.next-event-desc { font-size: .9rem; color: rgba(255,255,255,.8); margin-bottom: 1.5rem; max-width: none; }
+.next-event-desc { 
+  font-size: .9rem;
+  color: rgba(255,255,255,.8);
+  margin-bottom: .75rem;
+  max-width: none; 
+}
 .next-event-card .btn-outline {
   border-color: rgba(255,255,255,.4);
   color: var(--white);
