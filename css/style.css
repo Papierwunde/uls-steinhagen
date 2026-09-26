@@ -751,6 +751,17 @@ h4 { font-size: 1.1rem; }
 }
 
 /* Termine (Homepage) */
+.termine-link a {
+  display: block;
+  border-radius: 8px;
+  padding-bottom: .6rem;
+  padding-left: .3rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.termine-link a:hover {         
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-2px); 
+}
 #events { background: var(--white); }
 .events-layout {
   display: grid;
@@ -791,6 +802,14 @@ h4 { font-size: 1.1rem; }
   text-transform: uppercase;
   color: var(--green-mid);
 }
+.event-year {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--green-mid);  
+  line-height: 1;
+}
 .event-info h4 { margin-bottom: .3rem; color: var(--green-dark); }
 .event-info p {
   font-size: .9rem;
@@ -804,7 +823,6 @@ h4 { font-size: 1.1rem; }
   gap: .75rem;
   margin-top: .5rem;
 }
-
 .event-tag {
   display: inline-flex;
   align-items: center;
@@ -1258,6 +1276,15 @@ h4 { font-size: 1.1rem; }
 }
 #laermschutz .container--narrow {
   margin: auto;
+}
+/*PFAS*/
+#pfas .text-center {
+  text-align: center;
+}
+#pfas section {
+  margin: auto;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Verein */
