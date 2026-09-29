@@ -179,6 +179,7 @@ h4 { font-size: 1.1rem; }
   color: var(--green-mid);
   margin-bottom: .75rem;
 }
+
 .page-hero .container .section-label {
   color: var(--green-light);
 }
@@ -387,12 +388,48 @@ h4 { font-size: 1.1rem; }
 .nav-toggle.is-active .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* HERO */
+/*Hero conatainer top*/
+.hero-inner {
+  width: 100%;
+  max-width: 1200px; /* Nutzt exakt dieselbe maximale Breite wie deine Navigation */
+  margin: 0 auto;    /* Zentriert den gesamten Block perfekt auf der Seite */
+  z-index: 2;        /* Liegt sicher über dem Hintergrund */
+  
+  display: flex;
+  flex-wrap: wrap;   /* Erlaubt automatisches Umbrechen */
+  justify-content: space-between; /* Drückt Text nach links und Event nach rechts */
+  gap: 40px;         /* Abstand, wenn sie nebeneinander stehen */
+}
+.hero-container {
+  display: flex;       /* Aktiviert Flexbox */
+  flex-wrap: wrap;      /*Erlaubt das Umbrechen der inneren Container */
+  gap: 20px;
+}
+.hero-container .container {    
+  flex: 1 1 500px;     /* Wichtigste Zeile (Erklärung unten) */
+  padding: 20px;
+  margin-top: 5rem;
+}
+.events-layout-top {
+  flex: 1 1 350px;       /* Basisbreite für die Event-Karte */
+  max-width: 400px;      /* Verhindert, dass die Event-Karte unschön breit wird */
+  z-index: 2;
+  margin-bottom: 5rem;
+}
 #hero {
   position: relative;
   min-height: 100svh;
-  display: flex;
-  align-items: center;
+  display: flex;         /* Aktiviert Flexbox für die Hauptsektion */
+  align-items: center;   /* Zentriert den gesamten Inhalt vertikal */
+  justify-content: center; /* Zentriert den Inhalt horizontal */
+  flex-wrap: wrap;       /* Erlaubt das Umbrechen untereinander auf kleinen Bildschirmen */
+  gap: 40px;             /* Abstand zwischen Text und der Event-Karte */
+  padding: 40px 20px;    /* Padding, damit es auf Handys nicht am Rand klebt */
   overflow: hidden;
+}
+.hero-content {
+  max-width: 650px;
+  z-index: 2; 
 }
 .hero-bg {
   position: absolute;
@@ -411,12 +448,6 @@ h4 { font-size: 1.1rem; }
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(20,45,10,.72) 0%, rgba(45,80,22,.45) 60%, rgba(0,0,0,.2) 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding-top: 5rem;
-  padding-bottom: 4rem;
 }
 .hero-badge {
   display: inline-flex;
@@ -1068,7 +1099,9 @@ h4 { font-size: 1.1rem; }
   color: #2D5016;
   font-weight: bold;
 }
-
+#glyphosat, #gib, #flora-fauna, #gewerbepark, #baume, #feinstaub, #hochwasserschutz, #strahlenbelastung, #laermschutz, #pfas{
+  scroll-margin-top: 5rem;
+}
 /* Glyphosat */
 #glyphosat .topic-content {
   gap: 5rem;
@@ -2180,6 +2213,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
 .site-header .icon-slot--logo { color: var(--green-dark); }
 
 /* Responsive */
+@media (max-width: 1060px) {
+}
 @media (max-width: 1024px) {
   .about-grid           { grid-template-columns: 1fr; gap: 3rem; }
   /*.about-image-wrap img { height: 340px; }*/

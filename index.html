@@ -22,40 +22,96 @@
   <main id="main">
     <!-- HERO | Background image in style.css → .hero-bg(392) -->
     <section id="hero" aria-labelledby="hero-heading"> <!-- Dadurch liest der Screenreader zuerst den Titel -->
-      <div class="hero-bg" role="img" aria-label="Baum von unten"></div>
+      <div class="hero-bg" role="img" aria-label="Baum spiegelt sich in einer Glaskugel"></div>
       <div class="hero-overlay" aria-hidden="true"></div> <!-- Filter auf dem Hintergrundbild -->
 
-      <div class="container hero-content">
-        <!-- Badge pill über dem Titel (small label) -->
-        <div class="hero-badge" aria-hidden="true">
-          <span class="hero-badge-dot"></span>
-          Aktiv für Steinhagen seit 2005
+      <div class="hero-container hero-inner">
+
+        <div class="container hero-content">
+          <!-- Badge pill über dem Titel (small label) -->
+          <div class="hero-badge" aria-hidden="true">
+            <span class="hero-badge-dot"></span>
+            Aktiv für Steinhagen seit 2005
+          </div>
+
+          <!-- Title -->
+          <h1 class="hero-title" id="hero-heading">
+            Natur schützen.<br>
+            <em>Lebensqualität</em><br>
+            gestalten.
+          </h1>
+
+          <!-- Intro Text -->
+          <p class="hero-sub">
+            Der Umweltverein Steinhagen setzt sich seit über 20 Jahren für den Schutz
+            unserer natürlichen Umgebung, eine saubere Gemeinde und eine lebenswerte Zukunft ein.<br>
+          </p>
+          <!-- Button labels und hrefs -->
+          <div class="hero-actions">
+            <a href="verein.html#ziele" class="btn btn-primary">Ziele</a>
+            <a href="verein.html#mitglied" class="btn btn-outline">Mitgliedschaft</a>
+          </div>
         </div>
 
-        <!-- Title -->
-        <h1 class="hero-title" id="hero-heading">
-          Natur schützen.<br>
-          <em>Lebensqualität</em><br>
-          gestalten.
-        </h1>
-
-        <!-- Intro Text -->
-        <p class="hero-sub">
-          Der Umweltverein Steinhagen setzt sich seit über 20 Jahren für den Schutz
-          unserer natürlichen Umgebung, eine saubere Gemeinde und eine lebenswerte Zukunft ein.<br>
-        </p>
-        <!-- Button labels und hrefs -->
-        <div class="hero-actions">
-          <a href="verein.html#ziele" class="btn btn-primary">Ziele</a>
-          <a href="verein.html#mitglied" class="btn btn-outline">Mitgliedschaft</a>
+        <div class="container events-layout-top">
+          <aside class="next-event-card reveal" aria-labelledby="next-ev-title">
+              <p class="next-event-label">Nächste Veranstaltung</p>
+              <p class="next-event-date">11. Oktober 2026</p>
+              <h3 class="next-event-title" id="next-ev-title">Vortrag</h3>
+              <p class="next-event-desc">
+                Vortrag `Lass es wachsen` mit Anette und Ingolf Klee
+              </p>
+              <span class="event-tag sticky-card">
+                <span class="icon-slot" aria-hidden="true">
+                  <img src="assets/icons/ort.svg" alt="Ort" class="icon-slot">
+                </span>
+                Alte Feuerwehr Amshausen
+              </span>
+              <span class="event-tag sticky-card">
+                <span class="icon-slot" aria-hidden="true">
+                  <img src="assets/icons/uhr.svg" alt="Uhr" class="icon-slot">
+                </span>
+                16 Uhr
+              </span>  
+              
+              <a href="assets/pdfs/termine/Einladung Lass es wachsen.pdf" target="_blank" class="btn btn-outline">Einladung ansehen</a>
+            </aside>
         </div>
+
       </div>
-      
+        <!--
+        <div class="container events-layout">
+          <aside class="next-event-card reveal" aria-labelledby="next-ev-title">
+              <p class="next-event-label">Nächste Veranstaltung</p>
+              <p class="next-event-date">11. Oktober 2026</p>
+              <h3 class="next-event-title" id="next-ev-title">Vortrag</h3>
+              <p class="next-event-desc">
+                Vortrag `Lass es wachsen` mit Anette und Ingolf Klee
+              </p>
+              <span class="event-tag sticky-card">
+                <span class="icon-slot" aria-hidden="true">
+                  <img src="assets/icons/ort.svg" alt="Ort" class="icon-slot">
+                </span>
+                Alte Feuerwehr Amshausen
+              </span>
+              <span class="event-tag sticky-card">
+                <span class="icon-slot" aria-hidden="true">
+                  <img src="assets/icons/uhr.svg" alt="Uhr" class="icon-slot">
+                </span>
+                16 Uhr
+              </span>  
+              
+              <a href="assets/pdfs/termine/Einladung Lass es wachsen.pdf" target="_blank" class="btn btn-outline">Einladung ansehen</a>
+            </aside>
+        </div>
+        -->
+
       <!-- Animated scroll indicator | Scollt bis "stats" -->
       <div class="hero-scroll" aria-hidden="true" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
         <div class="hero-scroll-line"></div>
         <span>Scrollen</span>
       </div>
+
     </section>
 
     <!-- STATS BAR -->
@@ -67,11 +123,11 @@
             <span class="stat-label">Engagement für Steinhagen</span>
           </div>
           <div>
-            <span class="stat-number" data-target="10" data-prefix="~" data-suffix="">0</span>
+            <span class="stat-number" data-target="8" data-prefix="~" data-suffix="">0</span>
             <span class="stat-label">Veranstaltungen pro Jahr</span>
           </div>
           <div>
-            <span class="stat-number" data-target="10" data-suffix="">0</span>
+            <span class="stat-number" data-target="10" data-prefix="~" data-suffix="">0</span>
             <span class="stat-label">Themenfelder</span>
           </div>
           <div>
@@ -160,7 +216,32 @@
 
         <div class="news-grid">
           <!-- NEWS CARD -->
-          <!--
+
+          <div>
+            <a href="aktuelles-kaugummi-automat.html">
+              <article class="news-card reveal" aria-labelledby="news0-title">
+                <img class="news-card-img" src="assets/aktuelles/kaugummi-automat/20260513kaugummi-automat.png"
+                width="470" height="385"
+                alt="Jugentliche vor einem Kaugummi-Automaten"
+                loading="lazy" />
+                <div class="news-card-body">
+                  <span class="news-card-tag">Schulprojekt</span>
+                  <h3 class="news-card-title" id="news0-title">Ein umgerüsteter Kaugummi-Automat</h3>
+                  <p class="news-card-excerpt">Ein umgerüsteter Kaugummi-Automat setzt in Steinhagen ein kreatives 
+                    Zeichen gegen das Insektensterben. Schülerinnen und Schüler der Realschule haben das Altgerät gemeinsam 
+                    mit ihrer Techniklehrerin Marta Risse zu einem Saatgut-Spender umgebaut.
+                  </p>
+                  <div class="news-card-meta">
+                    <span class="icon-slot" aria-hidden="true">
+                      <img src="assets/icons/date.svg" alt="kalender" class="icon-slot">
+                    </span>
+                    <span>13.05.2026</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+
           <div>
             <a href="aktuelles-nisthilfen.html">
               <article class="news-card reveal" aria-labelledby="news1-title">
@@ -182,31 +263,8 @@
               </article>
             </a>
           </div>
-          -->
 
-
-          <div>
-            <a href="aktuelles-kaugummi-automat.html">
-              <article class="news-card reveal" aria-labelledby="news1-title">
-                <img class="news-card-img" src="assets/aktuelles/kaugummi-automat/20260513kaugummi-automat.png" width="470" height="385" alt="Jugentliche vor einem Kaugummi-Automaten" loading="lazy" />
-                <div class="news-card-body">
-                  <span class="news-card-tag">Schulprojekt</span>
-                  <h3 class="news-card-title" id="news1-title">Ein umgerüsteter Kaugummi-Automat</h3>
-                  <p class="news-card-excerpt">Ein umgerüsteter Kaugummi-Automat setzt in Steinhagen ein kreatives 
-                    Zeichen gegen das Insektensterben. Schülerinnen und Schüler der Realschule haben das Altgerät gemeinsam 
-                    mit ihrer Techniklehrerin Marta Risse zu einem Saatgut-Spender umgebaut.
-                  </p>
-                  <div class="news-card-meta">
-                    <span class="icon-slot" aria-hidden="true">
-                      <img src="assets/icons/date.svg" alt="kalender" class="icon-slot">
-                    </span>
-                    <span>13.05.2026</span>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
+          <!--
           <div>
             <a href="aktuelles-epa.html">
               <article class="news-card reveal" aria-labelledby="news2-title">
@@ -229,7 +287,33 @@
               </article>
             </a>
           </div>
+          -->
 
+          <div>
+            <a href="themen.html#pfas">
+              <article class="news-card reveal" aria-labelledby="news2-title">
+                <img class="news-card-img" src=""
+                width="" height=""
+                alt=""
+                loading="lazy" />
+                <div class="news-card-body">
+                  <span class="news-card-tag">Information</span>
+                  <h3 class="news-card-title" id="news2-title">Die Ewigkeits-Chemikalie PFAS</h3>
+                  <p class="news-card-excerpt">Der Name steht für per- und polyfluorierte Alkylsubstanzen. Wegen ihrer extremen 
+                    Langlebigkeit in der Umwelt werden sie oft auch als „Ewigkeits-Chemikalien“ (forever chemicals) bezeichnet. 
+                  </p>
+                  <div class="news-card-meta">
+                    <span class="icon-slot" aria-hidden="true">
+                      <img src="assets/icons/date.svg" alt="kalender" class="icon-slot">
+                    </span>
+                    <span>24.02.2025</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+
+          <!--
           <div>
             <a href="aktuelles-waldspaziergang-24.html">
               <article class="news-card reveal" aria-labelledby="news3-title">
@@ -250,7 +334,7 @@
               </article>
             </a>
           </div>
-          
+          -->
 
         </div>
 
@@ -275,13 +359,12 @@
         <div class="events-layout">
           <div>
 
-
-
+            <!--
             <article class="event-item reveal" aria-labelledby="ev1-title">
               <div class="event-date-box" aria-label="14. März">
                 <span class="event-day">23</span>
                 <span class="event-month">Mär</span>
-                <span class="event-year">2027</span>
+                <span class="event-year">2025</span>
               </div>
               <div class="termine-link"><a href="assets/pdfs/pfas/PFAS Einladung.pdf" target="_blank">
                 <div class="event-info">
@@ -311,6 +394,7 @@
                 </div>
               </div></a>
             </article>
+            -->
 
             <article class="event-item reveal" aria-labelledby="ev1-title">
               <div class="event-date-box" aria-label="14. März">
@@ -401,11 +485,12 @@
                 </div>
               </div>
             </article>
-            <!--
+
             <article class="event-item reveal" aria-labelledby="ev4-title">
               <div class="event-date-box" aria-label="02. November">
                 <span class="event-day">02</span>
                 <span class="event-month">Nov</span>
+                <span class="event-year">2026</span>
               </div>
               
               <div class="event-info">
@@ -421,7 +506,6 @@
                 </div>
               </div>
             </article>
-            -->
 
           </div>
 
@@ -481,7 +565,7 @@
             <p>- das meistverkaufte Pflanzengift der Welt.</p>
           </a>
 
-          <a class="topic-card reveal" href="">
+          <a class="topic-card reveal" href="themen.html#gib">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/laerm.svg" alt="Lärm" class="icon-slot">
@@ -491,17 +575,17 @@
             <p>Mehr Lärm durch Industriegebiete – Tag und Nacht, 70 dB!</p>
           </a>
 
-          <a class="topic-card reveal" href=".html">
+          <a class="topic-card reveal" href="themen.html#flora-fauna">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/klimaschutz.svg" alt="Blatt" class="icon-slot">
               </span>
             </div>
             <h4>Flora und Fauna</h4>
-            <p>Baum des Jahres und Insektenfreundliche Gärten</p>
+            <p>Baum des Jahres und Insektenfreundliche Gärten.</p>
           </a>
 
-          <a class="topic-card reveal" href=".html">
+          <a class="topic-card reveal" href="themen.html#gewerbepark">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/bauen.svg" alt="Baumarbeiterhelm" class="icon-slot">
@@ -511,7 +595,7 @@
             <p>Kritische Begleitung von Bauvorhaben mit Umweltrelevanz.</p>
           </a>
 
-          <a class="topic-card reveal" href=".html">
+          <a class="topic-card reveal" href="themen.html#baume">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/baum.svg" alt="Baum" class="icon-slot">
@@ -521,7 +605,7 @@
             <p>Bäume sind ganz natürliche Klimaschützer, sie binden CO2 und versorgen uns mit Sauerstoff.</p>
           </a>
 
-          <a class="topic-card reveal" href=".html">
+          <a class="topic-card reveal" href="themen.html#feinstaub">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/luftverschmutzung.svg" alt="Baum" class="icon-slot">
@@ -531,7 +615,7 @@
             <p>Je kleiner die Partikel sind, desto größer ist das Risiko.</p>
           </a>
 
-          <a class="topic-card reveal" href="themen.html">
+          <a class="topic-card reveal" href="themen.html#hochwasserschutz">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/hochwasser.svg" alt="Mitglieder" class="icon-slot">
@@ -541,6 +625,7 @@
             <p>Hochwasserschutz, Regenrückhaltung und gesunde Wasserversorgung.</p>
           </a>
 
+          <!--
           <a class="topic-card reveal" href=".html">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
@@ -550,6 +635,7 @@
             <h4>Digitalisierung</h4>
             <p>Die digitale Revolution verbaut unseren Kindern die Zukunft.</p>
           </a>
+          -->
 
           <a class="topic-card reveal" href="themen.html#strahlenbelastung">
             <div class="topic-icon" aria-hidden="true">
@@ -560,7 +646,8 @@
             <h4>Strahlenbelastung</h4>
             <p>Politik und Industrie negieren oder verharmlosen negative Auswirkungen der Strahlenbelastung.</p>
           </a>
-            <a class="topic-card reveal" href=".html">
+
+          <a class="topic-card reveal" href="themen.html#laermschutz">
             <div class="topic-icon" aria-hidden="true">
               <span class="icon-slot">
                 <img src="assets/icons/verkehr.svg" alt="Straße" class="icon-slot">
@@ -568,6 +655,17 @@
             </div>
             <h4>Verkehr und Lärmschutz</h4>
             <p>Unsere Augen können wir schließen. Unsere Ohren nicht.</p>
+          </a>
+
+
+          <a class="topic-card reveal" href="themen.html#pfas">
+            <div class="topic-icon" aria-hidden="true">
+              <span class="icon-slot">
+                <img src="assets/icons/pfas.svg" alt="PFAS" class="icon-slot">
+              </span>
+            </div>
+            <h4>PFAS</h4>
+            <p>Auch als „Ewigkeits-Chemikalie“ (forever chemical) bezeichnet.</p>
           </a>
 
         </div>
