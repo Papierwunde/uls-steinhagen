@@ -1692,6 +1692,7 @@ footer > * {
 
 /* SUBPAGE HERO | vorstand.html, mitgliedschaft.html, ueber-uns.html,
 ziele.html, news.html, presseecho.html, termine.html) */
+
 .page-hero {
   border-radius: 0 !important;
   position: relative;
@@ -1948,8 +1949,8 @@ ziele.html, news.html, presseecho.html, termine.html) */
 }
 .board-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .board-card__photo {
-  width: 88px; height: 88px;
-  border-radius: 50%;
+  border-radius: 5%;
+  width: 200px; height: 200px;
   overflow: hidden;
   background: var(--cream);
   border: 3px solid var(--green-light);
