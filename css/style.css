@@ -2221,7 +2221,7 @@ ziele.html, news.html, presseecho.html, termine.html) */
   /*.about-image-wrap img { height: 340px; }*/
   .about-badge-float    { bottom: -1rem; right: .5rem; }
   .events-layout        { grid-template-columns: 1fr; }
-  .next-event-card      { position: static; }
+  .next-event-card      { position: static; }*/
   .contact-layout       { grid-template-columns: 1fr; gap: 3rem; }
   .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .topic-content        { grid-template-columns: 1fr; gap: 2rem; }
