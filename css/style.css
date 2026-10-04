@@ -1410,6 +1410,16 @@ h4 { font-size: 1.1rem; }
   margin-bottom: .4rem;
 }
 .press-card-date { font-size: .82rem; color: var(--warm-gray); }
+/*PFAS*/
+.pfas-link {
+  text-align: center;
+}
+.pfas-link a {
+  color:#2D5016
+}
+.pfas-link a:hover {
+  color:#4A7C2F
+}
 
 /* Vorstand */
 .vorstand-grid {
