@@ -435,7 +435,7 @@ h4 { font-size: 1.1rem; }
   position: absolute;
   inset: 0;
   background-image: url('../assets/backgrounds/pexels-photo-235615-small.webp');
-  filter: blur(4px);
+  filter: blur(2px);
   background-size: cover;
   background-position: center;
   transform: scale(1);
