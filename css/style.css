@@ -439,10 +439,10 @@ h4 { font-size: 1.1rem; }
   background-size: cover;
   background-position: center;
   transform: scale(1);
-  transition: transform 8s ease-out;
+  transition: transform 10s ease-out;
 }
 .hero-bg.loaded {
-  transform: scale(1.11);
+  transform: scale(1.2);
 }
 .hero-overlay {
   position: absolute;
@@ -1204,6 +1204,13 @@ h4 { font-size: 1.1rem; }
 }
 
 /* Bäume für Steinhagen */
+#baume .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+.patenschaftsurkunde img{
+  border-radius: var(--radius-sm);
+}
 .baume .topic-content-img {
   margin-bottom: 1.5rem;
 }
