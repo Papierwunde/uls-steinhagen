@@ -374,9 +374,9 @@ if (form) {
 
     // Turnstile-Token aus dem Formular auslesen
     const formData = new FormData(e.target);
-    const token = formData.get('cf-turnstile-response');
+    const turnstileToken = formData.get('cf-turnstile-response');
 
-    if (!token) {
+    if (!turnstileToken) {
       alert('Bitte bestätige, dass du kein Bot bist.');
       return;
     }
@@ -420,13 +420,17 @@ if (form) {
             phone: form.phone.value || null,
             subject: form.subject.value || null,
             message: form.message.value,
-            token: token
+            turnstileToken: turnstileToken
           })
         }
       );
 
       if (!mailRes.ok) {
-        console.warn("E-Mail konnte nicht gesendet werden");
+        const errText = await mailRes.text();
+        console.error("E-Mail-Fehler:", errText);
+        alert("E-Mail konnte nicht gesendet werden.");
+        if (window.turnstile) window.turnstile.reset();
+        return;
       }
 
       alert("Nachricht erfolgreich gesendet");
