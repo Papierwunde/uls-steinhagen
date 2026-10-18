@@ -1617,6 +1617,18 @@ h4 { font-size: 1.1rem; }
 .hidden {
   display: none !important;
 }
+.form-error-box {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 14px 16px;
+  background-color: #fdf2f2;
+  border: 1px solid #f8d7da;
+  border-radius: var(--radius-md);
+  color: #a94442;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: var(--font-body);
+}
 
 /* Styling für die Erfolgsbox */
 .form-success-box {
@@ -1640,14 +1652,12 @@ h4 { font-size: 1.1rem; }
 
 .form-success-box h3 {
   margin: 0 0 8px 0;
-  font-size: 1.5rem;
   color: var(--green-dark);
 }
 
 .form-success-box p {
   margin: 0;
   color: var(--green-mid);
-  font-size: 1rem;
 }
 
 /* ── FOOTER ──────────────────────────────────────────── */

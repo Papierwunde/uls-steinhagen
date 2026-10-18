@@ -377,15 +377,14 @@ if (form) {
     const turnstileToken = formData.get('cf-turnstile-response');
 
     if (!turnstileToken) {
-      alert('Bitte bestätige, dass du kein Bot bist.');
+      showError("Bitte bestätigen Sie dass Sie kein Bot sind.");
+      if (window.turnstile) window.turnstile.reset();
       return;
     }
 
     button.disabled = true;
     const oldText = button.textContent;
     button.textContent = "Nachricht wird gesendet...";
-
-    
 
     try {
       //DB Insert
@@ -401,7 +400,8 @@ if (form) {
 
       if (error) {
         console.error(error);
-        alert("Fehler beim Senden");
+        showError("Ein unerwarteter Fehler ist aufgetreten! Bitte versuche es später erneut.");
+        if (window.turnstile) window.turnstile.reset();
         return;
       }
       console.log("MAIL FETCH START");
@@ -428,13 +428,14 @@ if (form) {
       if (!mailRes.ok) {
         const errText = await mailRes.text();
         console.error("E-Mail-Fehler:", errText);
-        alert("E-Mail konnte nicht gesendet werden.");
+        showError("E-Mail konnte nicht gesendet werden. Bitte versuche es erneut.");
         if (window.turnstile) window.turnstile.reset();
         return;
       }
 
       console.log("Nachricht erfolgreich gesendet");
       // Formular ausblenden und Erfolgsbox einblenden //
+      hideError();
       form.classList.add("hidden");
       const successBox = document.getElementById("form-success-message");
       if (successBox) {
@@ -448,11 +449,28 @@ if (form) {
 
     } catch (err) {
       console.error(err);
-      alert("Ein unerwarteter Fehler ist aufgetreten.");
+      showError("Ein unerwarteter Fehler ist aufgetreten. Bitte überprüfe deine Verbindung.");
       if (window.turnstile) window.turnstile.reset();
     } finally {
       button.disabled = false;
       button.textContent = oldText;
     }
   });
+}
+
+function showError(message) {
+  const errorBox = document.getElementById("form-error-message");
+  const errorText = document.getElementById("error-text");
+  if (errorBox && errorText) {
+    errorText.textContent = message;
+    errorBox.classList.remove("hidden");
+    errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function hideError() {
+  const errorBox = document.getElementById("form-error-message");
+  if (errorBox) {
+    errorBox.classList.add("hidden");
+  }
 }
