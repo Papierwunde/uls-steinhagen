@@ -433,8 +433,13 @@ if (form) {
         return;
       }
 
-      alert("Nachricht erfolgreich gesendet");
       console.log("Nachricht erfolgreich gesendet");
+      // Formular ausblenden und Erfolgsbox einblenden //
+      form.classList.add("hidden");
+      const successBox = document.getElementById("form-success-message");
+      if (successBox) {
+        successBox.classList.remove("hidden");
+      }
       form.reset();
       form.dataset.start = Date.now();
 

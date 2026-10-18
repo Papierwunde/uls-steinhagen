@@ -1613,6 +1613,42 @@ h4 { font-size: 1.1rem; }
 .form-group textarea { resize: vertical; min-height: 130px; }
 .form-submit { align-self: flex-start; }
 
+/* Form hidden Message*/
+.hidden {
+  display: none !important;
+}
+
+/* Styling für die Erfolgsbox */
+.form-success-box {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  color: var(--green-light);
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+}
+
+.form-success-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  color: var(--green-dark);
+}
+
+.form-success-box p {
+  margin: 0;
+  color: var(--green-mid);
+  font-size: 1rem;
+}
 
 /* ── FOOTER ──────────────────────────────────────────── */
 footer {
