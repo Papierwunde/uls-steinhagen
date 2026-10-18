@@ -11,6 +11,7 @@
   <link rel="icon" type="image/png" href="assets/uls-steinhagen-logo-baum.svg">
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -923,6 +924,8 @@
                 <label for="message">Ihre Nachricht *</label>
                 <textarea id="message" name="message" placeholder="Schreiben Sie uns …" required></textarea>
               </div>
+
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAFaMmWQyVMPJIZ6d"></div>
 
               <button type="submit" class="btn btn-primary form-submit">
                 <span class="icon-slot" aria-hidden="true">

@@ -372,9 +372,20 @@ if (form) {
       return;
     }
 
+    // Turnstile-Token aus dem Formular auslesen
+    const formData = new FormData(e.target);
+    const token = formData.get('cf-turnstile-response');
+
+    if (!token) {
+      alert('Bitte bestätige, dass du kein Bot bist.');
+      return;
+    }
+
     button.disabled = true;
     const oldText = button.textContent;
     button.textContent = "Nachricht wird gesendet...";
+
+    
 
     try {
       //DB Insert
@@ -408,7 +419,8 @@ if (form) {
             email: form.email.value,
             phone: form.phone.value || null,
             subject: form.subject.value || null,
-            message: form.message.value
+            message: form.message.value,
+            token: token
           })
         }
       );
@@ -422,6 +434,13 @@ if (form) {
       form.reset();
       form.dataset.start = Date.now();
 
+      // Turnstile nach Erfolg zurücksetzen
+      if (window.turnstile) window.turnstile.reset();
+
+    } catch (err) {
+      console.error(err);
+      alert("Ein unerwarteter Fehler ist aufgetreten.");
+      if (window.turnstile) window.turnstile.reset();
     } finally {
       button.disabled = false;
       button.textContent = oldText;
